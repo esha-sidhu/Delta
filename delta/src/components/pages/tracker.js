@@ -9,6 +9,9 @@ function Tracker()
                 Your trackers!
             </div>
             <div>
+                <Link to="/WaterTracker">Water Tracker</Link>
+            </div>
+            <div>
                 <Link to="/board">Go back to your bulletin board</Link>
             </div>
         </div>

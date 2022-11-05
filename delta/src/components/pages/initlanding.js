@@ -6,6 +6,8 @@ import Board from "./board";
 import Tracker from "./tracker";
 import Journel from "./journal";
 import Settings from "./settings";
+// TODO: remove below line later
+import WaterTracker from "../WaterTracker";
 
 function InitLanding()
 {
@@ -19,6 +21,7 @@ function InitLanding()
                 <Route path = "/tracker" element={<Tracker />} />
                 <Route path = "/journel" element={<Journel />} />
                 <Route path = "/settings" element={<Settings />} />
+                <Route path = "/WaterTracker" element={<WaterTracker />} />
             </Routes>
         </BrowserRouter>
     );
