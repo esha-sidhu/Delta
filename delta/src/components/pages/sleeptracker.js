@@ -124,31 +124,31 @@ class SleepTracker extends React.Component {
         <br/>
         <div>{day_convert[week[6].getDay()]}, {week[6].getDate()} {month_convert[week[6].getMonth()]} {week[6].getFullYear()}</div>
         <div>{this.state.Seven}</div>
-        <input type="text" value={this.state.hours_seven} onChange={this.handleChangeSeven}/>
+        <input type="text" value={this.state.hours_seven} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeSeven}/>
         <button onClick={this.handleSubmitSeven}>add</button>
         <div>{day_convert[week[5].getDay()]}, {week[5].getDate()} {month_convert[week[5].getMonth()]} {week[5].getFullYear()}</div>
         <div>{this.state.Six}</div>
-        <input type="text" value={this.state.hours_six} onChange={this.handleChangeSix}/>
+        <input type="text" value={this.state.hours_six} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeSix}/>
         <button onClick={this.handleSubmitSix}>add</button>
         <div>{day_convert[week[4].getDay()]}, {week[4].getDate()} {month_convert[week[4].getMonth()]} {week[4].getFullYear()}</div>
         <div>{this.state.Five}</div>
-        <input type="text" value={this.state.hours_two} onChange={this.handleChangeFive}/>
+        <input type="text" value={this.state.hours_two} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeFive}/>
         <button onClick={this.handleSubmitFive}>add</button>
         <div>{day_convert[week[3].getDay()]}, {week[3].getDate()} {month_convert[week[3].getMonth()]} {week[3].getFullYear()}</div>
         <div>{this.state.Four}</div>
-        <input type="text" value={this.state.hours_four} onChange={this.handleChangeFour}/>
+        <input type="text" value={this.state.hours_four} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeFour}/>
         <button onClick={this.handleSubmitFour}>add</button>
         <div>{day_convert[week[2].getDay()]}, {week[2].getDate()} {month_convert[week[2].getMonth()]} {week[2].getFullYear()}</div>
         <div>{this.state.Three}</div>
-        <input type="text" value={this.state.hours_three} onChange={this.handleChangeThree}/>
+        <input type="text" value={this.state.hours_three} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeThree}/>
         <button onClick={this.handleSubmitThree}>add</button>
         <div>{day_convert[week[1].getDay()]}, {week[1].getDate()} {month_convert[week[1].getMonth()]} {week[1].getFullYear()}</div>
         <div>{this.state.Two}</div>
-        <input type="text" value={this.state.hours_two} onChange={this.handleChangeTwo}/>
+        <input type="text" value={this.state.hours_two} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeTwo}/>
         <button onClick={this.handleSubmitTwo}>add</button>
         <div>{day_convert[week[0].getDay()]}, {week[0].getDate()} {month_convert[week[0].getMonth()]} {week[0].getFullYear()}</div>
         <div>{this.state.One}</div>
-        <input type="text" value={this.state.hours_one} onChange={this.handleChangeOne}/>
+        <input type="text" value={this.state.hours_one} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeOne}/>
         <button onClick={this.handleSubmitOne}>add</button>
         </>
     );
