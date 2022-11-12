@@ -36,6 +36,7 @@ function WaterEntry({dateInput})
 {
     const [date, setDate] = useState(dateInput);
     const [amount, setAmount] = useState(0);
+    const [invalidInputAlert, setInvalidInputAlert] = useState(false);
 
     let day = new Date();
     day.setDate(day.getDate() - date);
@@ -45,9 +46,21 @@ function WaterEntry({dateInput})
 
     function handleEntry()
     {
-        console.log(document.getElementById(entryName));
-        let add = parseInt(document.getElementById(entryName).value);
-        setAmount(amount + add);
+        let input = document.getElementById(entryName);
+        console.log(input);
+        let add = parseInt(input.value);
+        if (isNaN(add) || isNaN(input.value) || input.value.indexOf(".") !== -1 || add <= 0)
+        {
+            console.log("invalid input");
+            setInvalidInputAlert(true);
+        }
+        else
+        {
+            console.log(add);
+            setAmount(amount + add);
+            setInvalidInputAlert(false);
+        }
+        console.log(invalidInputAlert);
     }
 
     return(
@@ -59,7 +72,7 @@ function WaterEntry({dateInput})
                 {amount} fluid ounces
             </div>
             <div>
-                <input type="text" id={entryName}/>
+                <input type="text" placeholder="Input positive whole number" size="30" id={entryName}/>
                 <button onClick={handleEntry}>Add</button>
             </div>
         </div>
