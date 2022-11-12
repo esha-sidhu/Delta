@@ -10,6 +10,7 @@ function Tracker()
             </div>
             <div>
                 <Link to ="/sleeptracker">Go to Sleep Tracker</Link>
+                <Link to="/WaterTracker">Water Tracker</Link>
             </div>
             <div>
                 <Link to="/board">Go back to your bulletin board</Link>
