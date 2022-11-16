@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import ToDoList from "./todo-list";
 
 function Board()
 {
     return (
         <div>
             <div>
-                bulletin board
+                Welcome to your Bulletin Board!
             </div>
             <div>
                 <Link to="/tracker">Trackers</Link>
@@ -19,6 +20,9 @@ function Board()
             </div>
             <div>
                 <Link to="/">Log Out</Link>
+            </div>
+            <div>
+                <ToDoList/>
             </div>
         </div>
     );
