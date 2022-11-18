@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../firebase';
+import {Link} from "react-router-dom";
 
 function WaterTracker()
 {
@@ -9,6 +10,9 @@ function WaterTracker()
             <header>
                 Water Tracker
             </header>
+            <div>
+                <Link to="/WaterTrackerSearch">Search Past Entries</Link>
+            </div>
             <div>
                 <WaterEntry dateInput={0}/>
             </div>
@@ -41,6 +45,7 @@ function WaterEntry({dateInput})
 
     let date = new Date();
     date.setDate(date.getDate() - dateNum);
+    date.setHours(0, 0, 0, 0);
 
     let dateStr = convertDateObjectToStr(date);
     let entryName = "entry" + dateNum;
@@ -48,7 +53,6 @@ function WaterEntry({dateInput})
 
     useEffect(() => {
         const retrieveWaterData = async () => {
-        // TODO: error that uid does not exsist after refreshing the current page
         if (author.currentUser === null)
         {
             console.log("uid is null");
@@ -57,6 +61,7 @@ function WaterEntry({dateInput})
         const userAndDate = author.currentUser.uid + dateStr;
         const waterQ = query(collection(database, "waterData"), where("userDateSearch", "==", userAndDate));
         const waterQRes = await getDocs(waterQ);
+        console.log(waterQRes);
         if (waterQRes.docs.length !== 0)
         {
             setAmount(waterQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue);
@@ -212,4 +217,5 @@ function convertDateObjectToStr(dateObject)
     return date;
 }
 
+export {convertDateObjectToStr};
 export default WaterTracker;

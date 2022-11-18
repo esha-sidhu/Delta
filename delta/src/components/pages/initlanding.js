@@ -8,6 +8,7 @@ import Journel from "./journal";
 import Settings from "./settings";
 import SleepTracker from './sleeptracker';
 import WaterTracker from "../WaterTracker";
+import WaterTrackerSearch from "./WaterTrackerSearch";
 
 function InitLanding()
 {
@@ -23,6 +24,7 @@ function InitLanding()
                 <Route path = "/journel" element={<Journel />} />
                 <Route path = "/settings" element={<Settings />} />
                 <Route path = "/WaterTracker" element={<WaterTracker />} />
+                <Route path = "/WaterTrackerSearch" element={<WaterTrackerSearch/>}/>
             </Routes>
         </BrowserRouter>
     );
