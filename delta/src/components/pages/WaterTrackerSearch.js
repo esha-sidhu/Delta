@@ -161,6 +161,16 @@ function WaterTrackerSearch()
                 }
             }
         }
+        else
+        {
+            for (let i = endDate; i >= startDate; i.setDate(i.getDate() - 1))
+            {
+                const date = convertDateObjectToStr(i);
+                tempWaterEntries.push(
+                    {dateEntry: date, amountEntry: 0}
+                );
+            }
+        }
 
         setWaterEntries(tempWaterEntries);
         console.log(tempWaterEntries);
