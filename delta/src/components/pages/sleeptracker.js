@@ -81,7 +81,7 @@ class SleepTracker extends React.Component {
         this.setState({hours_three: event.target.value},);
     }
     handleSubmitThree() {
-        this.setState({Three: this.state.hours_wed, hours_three: ''});
+        this.setState({Three: this.state.hours_three, hours_three: ''});
     }
 
 
@@ -132,7 +132,7 @@ class SleepTracker extends React.Component {
         <button onClick={this.handleSubmitSix}>add</button>
         <div>{day_convert[week[4].getDay()]}, {week[4].getDate()} {month_convert[week[4].getMonth()]} {week[4].getFullYear()}</div>
         <div>{this.state.Five}</div>
-        <input type="text" value={this.state.hours_two} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeFive}/>
+        <input type="text" value={this.state.hours_five} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeFive}/>
         <button onClick={this.handleSubmitFive}>add</button>
         <div>{day_convert[week[3].getDay()]}, {week[3].getDate()} {month_convert[week[3].getMonth()]} {week[3].getFullYear()}</div>
         <div>{this.state.Four}</div>
