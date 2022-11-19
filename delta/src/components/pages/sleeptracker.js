@@ -7,6 +7,7 @@ function getPreviousDay(date = new Date()) {
     previous.setDate(date.getDate() - 1);
     week.push(previous)
   }
+  
 
 getPreviousDay(week[0]);
 getPreviousDay(week[1]);
@@ -67,7 +68,7 @@ class SleepTracker extends React.Component {
     handleSubmitOne() {
         if(this.state.hours_one > 0 && this.state.hours_one <= 24 && this.state.hours_one % 1 === 0)
         {
-            this.setState({One: this.state.hours_one, hours_one: ''});
+            this.setState({One: this.state.hours_one/1, hours_one: ''});
         }
     }
 
@@ -78,7 +79,7 @@ class SleepTracker extends React.Component {
     handleSubmitTwo() {
         if(this.state.hours_two > 0 && this.state.hours_two <= 24 && this.state.hours_two % 1 === 0)
         {
-            this.setState({Two: this.state.hours_two, hours_two: ''});
+            this.setState({Two: this.state.hours_two/1, hours_two: ''});
         }
     }
 
@@ -89,7 +90,7 @@ class SleepTracker extends React.Component {
     handleSubmitThree() {
         if(this.state.hours_three > 0 && this.state.hours_three <= 24 && this.state.hours_three % 1 === 0)
         {
-            this.setState({Three: this.state.hours_three, hours_three: ''});
+            this.setState({Three: this.state.hours_three/1, hours_three: ''});
         }
     }
 
@@ -100,7 +101,7 @@ class SleepTracker extends React.Component {
     handleSubmitFour() {
         if(this.state.hours_four > 0 && this.state.hours_four <= 24 && this.state.hours_four % 1 === 0)
         {
-            this.setState({Four: this.state.hours_four, hours_four: ''});
+            this.setState({Four: this.state.hours_four/1, hours_four: ''});
         }
     }
 
@@ -111,7 +112,7 @@ class SleepTracker extends React.Component {
     handleSubmitFive() {
         if(this.state.hours_five > 0 && this.state.hours_five <= 24 && this.state.hours_five % 1 === 0)
         {
-            this.setState({Five: this.state.hours_five, hours_five: ''});
+            this.setState({Five: this.state.hours_five/1, hours_five: ''});
         }
     }
 
@@ -122,7 +123,7 @@ class SleepTracker extends React.Component {
     handleSubmitSix() {
         if(this.state.hours_six > 0 && this.state.hours_six <= 24 && this.state.hours_six % 1 === 0)
         {
-            this.setState({Six: this.state.hours_six, hours_six: ''});
+            this.setState({Six: this.state.hours_six/1, hours_six: ''});
         }
     }
 
@@ -134,7 +135,7 @@ class SleepTracker extends React.Component {
     handleSubmitSeven() {
         if(this.state.hours_seven > 0 && this.state.hours_seven <= 24 && this.state.hours_seven % 1 === 0)
         {
-            this.setState({Seven: this.state.hours_seven, hours_seven: ''});
+            this.setState({Seven: this.state.hours_seven/1, hours_seven: ''});
         }
     }
 
