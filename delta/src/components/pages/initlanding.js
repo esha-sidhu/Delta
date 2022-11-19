@@ -4,7 +4,7 @@ import SignUp from "./signup";
 import LogIn from "./login";
 import Board from "./board";
 import Tracker from "./tracker";
-import Journel from "./journal";
+import Journal from "./journal";
 import Settings from "./settings";
 import SleepTracker from './sleeptracker';
 import WaterTracker from "../WaterTracker";
@@ -21,7 +21,7 @@ function InitLanding()
                 <Route path = "/board" element={<Board />} />
                 <Route path = "/tracker" element={<Tracker />} />
                 <Route path = "/sleeptracker" element={<SleepTracker />} />
-                <Route path = "/journel" element={<Journel />} />
+                <Route path = "/journal" element={<Journal />} />
                 <Route path = "/settings" element={<Settings />} />
                 <Route path = "/WaterTracker" element={<WaterTracker />} />
                 <Route path = "/MoodTracker" element={<MoodTracker />} />
