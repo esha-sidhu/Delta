@@ -79,7 +79,7 @@ class SleepTracker extends React.Component {
             let sleepQRes = await getDocs(sleepQ);
             if (sleepQRes.docs.length !== 0)
             {
-                this.setState({One: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue});
+                this.setState({One: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
             }
             else
             {
@@ -91,7 +91,7 @@ class SleepTracker extends React.Component {
             sleepQRes = await getDocs(sleepQ);
             if (sleepQRes.docs.length !== 0)
             {
-                this.setState({Two: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue});
+                this.setState({Two: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
             }
             else
             {
@@ -103,7 +103,7 @@ class SleepTracker extends React.Component {
             sleepQRes = await getDocs(sleepQ);
             if (sleepQRes.docs.length !== 0)
             {
-                this.setState({Three: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue});
+                this.setState({Three: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
             }
             else
             {
@@ -115,7 +115,7 @@ class SleepTracker extends React.Component {
             sleepQRes = await getDocs(sleepQ);
             if (sleepQRes.docs.length !== 0)
             {
-                this.setState({Four: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue});
+                this.setState({Four: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
             }
             else
             {
@@ -127,7 +127,7 @@ class SleepTracker extends React.Component {
             sleepQRes = await getDocs(sleepQ);
             if (sleepQRes.docs.length !== 0)
             {
-                this.setState({Five: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue});
+                this.setState({Five: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
             }
             else
             {
@@ -139,7 +139,7 @@ class SleepTracker extends React.Component {
             sleepQRes = await getDocs(sleepQ);
             if (sleepQRes.docs.length !== 0)
             {
-                this.setState({Six: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue});
+                this.setState({Six: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
             }
             else
             {
@@ -153,7 +153,7 @@ class SleepTracker extends React.Component {
             console.log(sleepQRes);
             if (sleepQRes.docs.length !== 0)
             {
-                this.setState({Seven: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue});
+                this.setState({Seven: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
             }
             else
             {
@@ -270,6 +270,9 @@ class SleepTracker extends React.Component {
         return (
         <>
         <div>Sleep Tracker</div>
+        <div>
+                <Link to="/SleepTrackerSearch">Search Past Entries</Link>
+        </div>
         <br/>
         <div>{day_convert[week[6].getDay()]}, {week[6].getDate()} {month_convert[week[6].getMonth()]} {week[6].getFullYear()}</div>
         <div>{this.state.Seven}</div>
@@ -304,4 +307,5 @@ class SleepTracker extends React.Component {
     }
 }
 
+export {day_convert, month_convert};
 export default SleepTracker;
