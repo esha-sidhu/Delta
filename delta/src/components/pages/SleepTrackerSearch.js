@@ -56,6 +56,20 @@ function SleepTrackerSearch()
                 }
             }
         }
+        else
+        {
+            const date = new Date();
+            date.setHours(0, 0, 0, 0);
+
+            setMinDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+            setMaxDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+
+            const dateStr = convertDateObjectToStr(date);
+
+            tempSleepEntries.push(
+                {dateEntry: dateStr, amountEntry: 0}
+            );
+        }
 
         setSleepEntries(tempSleepEntries);
         console.log(tempSleepEntries);

@@ -56,6 +56,20 @@ function WaterTrackerSearch()
                 }
             }
         }
+        else
+        {
+            const date = new Date();
+            date.setHours(0, 0, 0, 0);
+
+            setMinDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+            setMaxDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+
+            const dateStr = convertDateObjectToStr(date);
+
+            tempWaterEntries.push(
+                {dateEntry: dateStr, amountEntry: 0}
+            );
+        }
 
         setWaterEntries(tempWaterEntries);
         console.log(tempWaterEntries);

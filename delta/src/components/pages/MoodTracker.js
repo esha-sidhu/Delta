@@ -40,6 +40,7 @@ function MoodTracker()
 
 function MoodEntry({dateInput})
 {
+    const [temp, setTemp] = useState(false);
     const [dateNum, setDateNum] = useState(dateInput);
     const [amount, setAmount] = useState("-");
 
@@ -72,7 +73,7 @@ function MoodEntry({dateInput})
         };
 
         retrieveMoodData();
-    });
+    }, [temp]);
 
     function handleEntry()
     {
