@@ -1,10 +1,12 @@
 import React from 'react';
 
 const week = [new Date()]
+week[0].setHours(0, 0, 0, 0);
 
 function getPreviousDay(date = new Date()) {
     const previous = new Date(date.getTime());
     previous.setDate(date.getDate() - 1);
+    previous.setHours(0, 0, 0, 0);
     week.push(previous)
   }
   
