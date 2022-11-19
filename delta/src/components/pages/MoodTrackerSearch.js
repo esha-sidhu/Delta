@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {collection, getDocs, query, where, orderBy} from 'firebase/firestore';
 import {database, author} from '../../firebase';
-import {convertDateObjectToStr} from '../WaterTracker';
+import {convertDateObjectToStr} from './MoodTracker';
 
-function WaterTrackerSearch()
+function MoodTrackerSearch()
 {
     const [temp, setTemp] = useState(false);
     const [invalidSearch, setInvalidSearch] = useState("");
-    const [waterEntries, setWaterEntries] = useState([]);
+    const [moodEntries, setMoodEntries] = useState([]);
     const [minDate, setMinDate] = useState("");
     const [maxDate, setMaxDate] = useState("");
 
     useEffect(() => {
-        const retrievePastWaterData = async () => {
+        const retrievePastMoodData = async () => {
         if (author.currentUser === null)
         {
             console.log("uid is null");
@@ -20,16 +20,16 @@ function WaterTrackerSearch()
         }
 
         const user = author.currentUser.uid;
-        const waterQ = query(collection(database, "waterData"), where("authorID", "==", user), orderBy("date"));
-        const waterQRes = await getDocs(waterQ);
-        const len = waterQRes.docs.length;
-        let tempWaterEntries = [];
+        const moodQ = query(collection(database, "moodData"), where("authorID", "==", user), orderBy("date"));
+        const moodQRes = await getDocs(moodQ);
+        const len = moodQRes.docs.length;
+        let tempMoodEntries = [];
 
         if (len > 0)
         {
-            let firstDate = waterQRes.docs[0]._document.data.value.mapValue.fields.date.timestampValue;
+            let firstDate = moodQRes.docs[0]._document.data.value.mapValue.fields.date.timestampValue;
             firstDate = new Date(firstDate);
-            let lastDate = waterQRes.docs[len-1]._document.data.value.mapValue.fields.date.timestampValue;
+            let lastDate = moodQRes.docs[len-1]._document.data.value.mapValue.fields.date.timestampValue;
             lastDate = new Date(lastDate);
 
             setMinDate(`${firstDate.getFullYear()}-${firstDate.getMonth() + 1}-${firstDate.getDate()}`);
@@ -39,29 +39,29 @@ function WaterTrackerSearch()
             for (let i = lastDate; i >= firstDate; i.setDate(i.getDate() - 1))
             {
                 const date = convertDateObjectToStr(i);
-                const dateFromDatabse = waterQRes.docs[j]._document.data.value.mapValue.fields.dateStr.stringValue;
+                const dateFromDatabse = moodQRes.docs[j]._document.data.value.mapValue.fields.dateStr.stringValue;
                 if (date === dateFromDatabse)
                 {
-                    const amount = waterQRes.docs[j]._document.data.value.mapValue.fields.value.integerValue;
-                    tempWaterEntries.push(
+                    const amount = moodQRes.docs[j]._document.data.value.mapValue.fields.value.stringValue;
+                    tempMoodEntries.push(
                         {dateEntry: dateFromDatabse, amountEntry: amount}
                     );
                     j--;
                 }
                 else
                 {
-                    tempWaterEntries.push(
-                        {dateEntry: date, amountEntry: 0}
+                    tempMoodEntries.push(
+                        {dateEntry: date, amountEntry: "-"}
                     );
                 }
             }
         }
 
-        setWaterEntries(tempWaterEntries);
-        console.log(tempWaterEntries);
+        setMoodEntries(tempMoodEntries);
+        console.log(tempMoodEntries);
     };
 
-    retrievePastWaterData();
+    retrievePastMoodData();
     }, [temp]);
 
     async function handleSearch()
@@ -92,19 +92,19 @@ function WaterTrackerSearch()
                 window.location.assign("/");
             }
             const user = author.currentUser.uid;
-            const waterQ = query(collection(database, "waterData"), where("authorID", "==", user), orderBy("date"));
-            const waterQRes = await getDocs(waterQ);
-            const len = waterQRes.docs.length;
+            const moodQ = query(collection(database, "moodData"), where("authorID", "==", user), orderBy("date"));
+            const moodQRes = await getDocs(moodQ);
+            const len = moodQRes.docs.length;
             if (len > 0)
             {
                 if (start === "T00:00:00")
                 {
-                    startDate = waterQRes.docs[0]._document.data.value.mapValue.fields.date.timestampValue;
+                    startDate = moodQRes.docs[0]._document.data.value.mapValue.fields.date.timestampValue;
                     startDate = new Date(startDate);
                 }
                 if (end === "T00:00:00")
                 {
-                    endDate = waterQRes.docs[len-1]._document.data.value.mapValue.fields.date.timestampValue;
+                    endDate = moodQRes.docs[len-1]._document.data.value.mapValue.fields.date.timestampValue;
                     endDate = new Date(endDate);
                 }
             }
@@ -129,10 +129,10 @@ function WaterTrackerSearch()
             window.location.assign("/");
         }
         const user = author.currentUser.uid;
-        const waterQ = query(collection(database, "waterData"), where("authorID", "==", user), where("date", ">=", startDate), where("date", "<=", endDate), orderBy("date"));
-        const waterQRes = await getDocs(waterQ);
-        const len = waterQRes.docs.length;
-        let tempWaterEntries = [];
+        const moodQ = query(collection(database, "moodData"), where("authorID", "==", user), where("date", ">=", startDate), where("date", "<=", endDate), orderBy("date"));
+        const moodQRes = await getDocs(moodQ);
+        const len = moodQRes.docs.length;
+        let tempMoodEntries = [];
         if (len > 0)
         {
             let j = len - 1;
@@ -142,21 +142,21 @@ function WaterTrackerSearch()
                 let dateFromDatabase = "";
                 if (j >= 0)
                 {
-                    dateFromDatabase = waterQRes.docs[j]._document.data.value.mapValue.fields.dateStr.stringValue;
+                    dateFromDatabase = moodQRes.docs[j]._document.data.value.mapValue.fields.dateStr.stringValue;
                 }
                
                 if (date === dateFromDatabase)
                 {
-                    const amount = waterQRes.docs[j]._document.data.value.mapValue.fields.value.integerValue;
-                    tempWaterEntries.push(
+                    const amount = moodQRes.docs[j]._document.data.value.mapValue.fields.value.stringValue;
+                    tempMoodEntries.push(
                         {dateEntry: dateFromDatabase, amountEntry: amount}
                     );
                     j--;
                 }
                 else
                 {
-                    tempWaterEntries.push(
-                        {dateEntry: date, amountEntry: 0}
+                    tempMoodEntries.push(
+                        {dateEntry: date, amountEntry: "-"}
                     );
                 }
             }
@@ -166,20 +166,20 @@ function WaterTrackerSearch()
             for (let i = endDate; i >= startDate; i.setDate(i.getDate() - 1))
             {
                 const date = convertDateObjectToStr(i);
-                tempWaterEntries.push(
-                    {dateEntry: date, amountEntry: 0}
+                tempMoodEntries.push(
+                    {dateEntry: date, amountEntry: "-"}
                 );
             }
         }
 
-        setWaterEntries(tempWaterEntries);
-        console.log(tempWaterEntries);
+        setMoodEntries(tempMoodEntries);
+        console.log(tempMoodEntries);
     }
 
     return(
         <div>
             <header>
-                Search Past Water Tracker Entries
+                Search Past Mood Tracker Entries
             </header>
             <div>
                 <div>
@@ -194,14 +194,14 @@ function WaterTrackerSearch()
                 {invalidSearch}
             </div>
             <div>
-                {waterEntries.map(({dateEntry, amountEntry}) => {
+                {moodEntries.map(({dateEntry, amountEntry}) => {
                     return (
                     <div key={dateEntry}>
                         <div>
                             {dateEntry}
                         </div>
                         <div>
-                            {amountEntry} fluid ounces
+                            {amountEntry}
                         </div>
                     </div>
                     );
@@ -211,4 +211,4 @@ function WaterTrackerSearch()
     );
 }
 
-export default WaterTrackerSearch;
+export default MoodTrackerSearch;
