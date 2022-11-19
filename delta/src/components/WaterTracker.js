@@ -1,4 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
+import {database, author} from '../firebase';
+import {Link} from "react-router-dom";
 
 function WaterTracker()
 {
@@ -7,6 +10,9 @@ function WaterTracker()
             <header>
                 Water Tracker
             </header>
+            <div>
+                <Link to="/WaterTrackerSearch">Search Past Entries</Link>
+            </div>
             <div>
                 <WaterEntry dateInput={0}/>
             </div>
@@ -34,33 +40,80 @@ function WaterTracker()
 
 function WaterEntry({dateInput})
 {
-    const [date, setDate] = useState(dateInput);
+    const [dateNum, setDateNum] = useState(dateInput);
     const [amount, setAmount] = useState(0);
-    const [invalidInputAlert, setInvalidInputAlert] = useState(false);
 
-    let day = new Date();
-    day.setDate(day.getDate() - date);
+    let date = new Date();
+    date.setDate(date.getDate() - dateNum);
+    date.setHours(0, 0, 0, 0);
 
-    let dateStr = convertDateObjectToStr(day);
-    let entryName = "entry" + date;
+    let dateStr = convertDateObjectToStr(date);
+    let entryName = "entry" + dateNum;
+    let change = 0;
+
+    useEffect(() => {
+        const retrieveWaterData = async () => {
+        if (author.currentUser === null)
+        {
+            console.log("uid is null");
+            window.location.assign("/");
+        }
+        const userAndDate = author.currentUser.uid + dateStr;
+        const waterQ = query(collection(database, "waterData"), where("userDateSearch", "==", userAndDate));
+        const waterQRes = await getDocs(waterQ);
+        console.log(waterQRes);
+        if (waterQRes.docs.length !== 0)
+        {
+            setAmount(waterQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue);
+        }
+        else
+        {
+            setAmount(0);
+        }
+    };
+
+    retrieveWaterData();
+    });
 
     function handleEntry()
     {
         let input = document.getElementById(entryName);
         console.log(input);
-        let add = parseInt(input.value);
-        if (isNaN(add) || isNaN(input.value) || input.value.indexOf(".") !== -1 || add <= 0)
+        change = parseInt(input.value);
+        if (isNaN(change) || isNaN(input.value) || input.value.indexOf(".") !== -1 || change <= 0)
         {
             console.log("invalid input");
-            setInvalidInputAlert(true);
         }
         else
         {
-            console.log(add);
-            setAmount(amount + add);
-            setInvalidInputAlert(false);
+            console.log(change);
+            setAmount((change), saveWaterData(change));
         }
-        console.log(invalidInputAlert);
+    }
+
+    async function saveWaterData(c)
+    {
+        const userAndDate = author.currentUser.uid + dateStr;
+        const waterQ = query(collection(database, "waterData"), where("userDateSearch", "==", userAndDate));
+        const waterQRes = await getDocs(waterQ);
+        if (waterQRes.docs.length !== 0)
+        {
+            const waterID = waterQRes.docs[0].id;
+            const trackerToUpdate = doc(getFirestore(), "waterData", waterID);
+            await updateDoc(trackerToUpdate, {value: c});
+        }
+        else
+        {
+            await addDoc (collection(database, "waterData"), {
+                authorName: author.currentUser.displayName, 
+                authorID: author.currentUser.uid, 
+                date,
+                dateStr,
+                value: change,
+                userDateSearch: userAndDate
+            }
+            );
+        }
     }
 
     return(
@@ -73,7 +126,7 @@ function WaterEntry({dateInput})
             </div>
             <div>
                 <input type="text" placeholder="Input positive whole number" size="30" id={entryName}/>
-                <button onClick={handleEntry}>Add</button>
+                <button onClick={handleEntry}>Change</button>
             </div>
         </div>
     );
@@ -164,4 +217,5 @@ function convertDateObjectToStr(dateObject)
     return date;
 }
 
+export {convertDateObjectToStr};
 export default WaterTracker;
