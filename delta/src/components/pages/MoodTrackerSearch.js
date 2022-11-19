@@ -56,6 +56,20 @@ function MoodTrackerSearch()
                 }
             }
         }
+        else
+        {
+            const date = new Date();
+            date.setHours(0, 0, 0, 0);
+
+            setMinDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+            setMaxDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+
+            const dateStr = convertDateObjectToStr(date);
+
+            tempMoodEntries.push(
+                {dateEntry: dateStr, amountEntry: "-"}
+            );
+        }
 
         setMoodEntries(tempMoodEntries);
         console.log(tempMoodEntries);

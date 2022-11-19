@@ -40,6 +40,7 @@ function WaterTracker()
 
 function WaterEntry({dateInput})
 {
+    const [temp, setTemp] = useState(false);
     const [dateNum, setDateNum] = useState(dateInput);
     const [amount, setAmount] = useState(0);
 
@@ -73,7 +74,7 @@ function WaterEntry({dateInput})
     };
 
     retrieveWaterData();
-    });
+    }, [temp]);
 
     function handleEntry()
     {
