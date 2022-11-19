@@ -1,4 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
+import {database, author} from '../../firebase';
+import {Link} from "react-router-dom";
 
 function MoodTracker()
 {
@@ -7,6 +10,9 @@ function MoodTracker()
             <header>
                 Mood Tracker
             </header>
+            <div>
+                <Link to="/MoodTrackerSearch">Search Past Entries</Link>
+            </div>
             <div>
                 <MoodEntry dateInput={0}/>
             </div>
@@ -34,20 +40,70 @@ function MoodTracker()
 
 function MoodEntry({dateInput})
 {
-    const [date, setDate] = useState(dateInput);
+    const [dateNum, setDateNum] = useState(dateInput);
     const [amount, setAmount] = useState("-");
 
-    let day = new Date();
-    day.setDate(day.getDate() - date);
+    let date = new Date();
+    date.setDate(date.getDate() - dateNum);
+    date.setHours(0, 0, 0, 0);
 
-    let dateStr = convertDateObjectToStr(day);
-    let entryName = "entry" + date;
+    let dateStr = convertDateObjectToStr(date);
+    let entryName = "entry" + dateNum;
+
+    useEffect(() => {
+        const retrieveMoodData = async () => {
+            if (author.currentUser === null)
+            {
+                console.log("uid is null");
+                window.location.assign("/");
+            }
+            const userAndDate = author.currentUser.uid + dateStr;
+            const moodQ = query(collection(database, "moodData"), where("userDateSearch", "==", userAndDate));
+            const moodQRes = await getDocs(moodQ);
+            console.log(moodQRes);
+            if (moodQRes.docs.length !== 0)
+            {
+                setAmount(moodQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue);
+            }
+            else
+            {
+                setAmount("-");
+            }
+        };
+
+        retrieveMoodData();
+    });
 
     function handleEntry()
     {
         let input = document.getElementById(entryName);
         console.log(input.value);
-        setAmount(input.value);
+        setAmount(input.value, saveMoodData(input.value));
+    }
+
+    async function saveMoodData(c)
+    {
+        const userAndDate = author.currentUser.uid + dateStr;
+        const moodQ = query(collection(database, "moodData"), where("userDateSearch", "==", userAndDate));
+        const moodQRes = await getDocs(moodQ);
+        if (moodQRes.docs.length !== 0)
+        {
+            const moodID = moodQRes.docs[0].id;
+            const trackerToUpdate = doc(getFirestore(), "moodData", moodID);
+            await updateDoc(trackerToUpdate, {value: c});
+        }
+        else
+        {
+            await addDoc (collection(database, "moodData"), {
+                authorName: author.currentUser.displayName, 
+                authorID: author.currentUser.uid, 
+                date,
+                dateStr,
+                value: c,
+                userDateSearch: userAndDate
+            }
+            );
+        }
     }
 
     return(
@@ -158,4 +214,5 @@ function convertDateObjectToStr(dateObject)
     return date;
 }
 
+export {convertDateObjectToStr};
 export default MoodTracker;

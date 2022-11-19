@@ -7,8 +7,11 @@ import Tracker from "./tracker";
 import Journal from "./journal";
 import Settings from "./settings";
 import SleepTracker from './sleeptracker';
+import SleepTrackerSearch from './SleepTrackerSearch';
 import WaterTracker from "../WaterTracker";
+import WaterTrackerSearch from "./WaterTrackerSearch";
 import MoodTracker from "./MoodTracker";
+import MoodTrackerSearch from './MoodTrackerSearch';
 
 function InitLanding()
 {
@@ -21,10 +24,13 @@ function InitLanding()
                 <Route path = "/board" element={<Board />} />
                 <Route path = "/tracker" element={<Tracker />} />
                 <Route path = "/sleeptracker" element={<SleepTracker />} />
+                <Route path = "/SleepTrackerSearch" element={<SleepTrackerSearch/>}/>
                 <Route path = "/journal" element={<Journal />} />
                 <Route path = "/settings" element={<Settings />} />
                 <Route path = "/WaterTracker" element={<WaterTracker />} />
+                <Route path = "/WaterTrackerSearch" element={<WaterTrackerSearch/>}/>
                 <Route path = "/MoodTracker" element={<MoodTracker />} />
+                <Route path = "/MoodTrackerSearch" element={<MoodTrackerSearch/>}/>
             </Routes>
         </BrowserRouter>
     );

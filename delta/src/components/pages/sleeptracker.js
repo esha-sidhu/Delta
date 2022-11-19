@@ -1,4 +1,7 @@
 import React from 'react';
+import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
+import {database, author} from '../../firebase';
+import {Link} from "react-router-dom";
 
 const week = [new Date()]
 week[0].setHours(0, 0, 0, 0);
@@ -63,6 +66,128 @@ class SleepTracker extends React.Component {
         this.handleSubmitSeven = this.handleSubmitSeven.bind(this);
     }
 
+    componentDidMount()
+    {
+        const retrieveSleepData = async () => {
+            if (author.currentUser === null)
+            {
+                window.location.assign("/");
+            }
+
+            let userAndDate = author.currentUser.uid + `${day_convert[week[0].getDay()]}, ${week[0].getDate()} ${month_convert[week[0].getMonth()]} ${week[0].getFullYear()}`;
+            let sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+            let sleepQRes = await getDocs(sleepQ);
+            if (sleepQRes.docs.length !== 0)
+            {
+                this.setState({One: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
+            }
+            else
+            {
+                this.setState({One: 0});
+            };
+
+            userAndDate = author.currentUser.uid + `${day_convert[week[1].getDay()]}, ${week[1].getDate()} ${month_convert[week[1].getMonth()]} ${week[1].getFullYear()}`;
+            sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+            sleepQRes = await getDocs(sleepQ);
+            if (sleepQRes.docs.length !== 0)
+            {
+                this.setState({Two: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
+            }
+            else
+            {
+                this.setState({Two: 0});
+            };
+
+            userAndDate = author.currentUser.uid + `${day_convert[week[2].getDay()]}, ${week[2].getDate()} ${month_convert[week[2].getMonth()]} ${week[2].getFullYear()}`;
+            sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+            sleepQRes = await getDocs(sleepQ);
+            if (sleepQRes.docs.length !== 0)
+            {
+                this.setState({Three: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
+            }
+            else
+            {
+                this.setState({Three: 0});
+            };
+
+            userAndDate = author.currentUser.uid + `${day_convert[week[3].getDay()]}, ${week[3].getDate()} ${month_convert[week[3].getMonth()]} ${week[3].getFullYear()}`;
+            sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+            sleepQRes = await getDocs(sleepQ);
+            if (sleepQRes.docs.length !== 0)
+            {
+                this.setState({Four: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
+            }
+            else
+            {
+                this.setState({Four: 0});
+            };
+
+            userAndDate = author.currentUser.uid + `${day_convert[week[4].getDay()]}, ${week[4].getDate()} ${month_convert[week[4].getMonth()]} ${week[4].getFullYear()}`;
+            sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+            sleepQRes = await getDocs(sleepQ);
+            if (sleepQRes.docs.length !== 0)
+            {
+                this.setState({Five: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
+            }
+            else
+            {
+                this.setState({Five: 0});
+            };
+
+            userAndDate = author.currentUser.uid + `${day_convert[week[5].getDay()]}, ${week[5].getDate()} ${month_convert[week[5].getMonth()]} ${week[5].getFullYear()}`;
+            sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+            sleepQRes = await getDocs(sleepQ);
+            if (sleepQRes.docs.length !== 0)
+            {
+                this.setState({Six: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
+            }
+            else
+            {
+                this.setState({Six: 0});
+            };
+
+            userAndDate = author.currentUser.uid + `${day_convert[week[6].getDay()]}, ${week[6].getDate()} ${month_convert[week[6].getMonth()]} ${week[6].getFullYear()}`;
+            sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+            sleepQRes = await getDocs(sleepQ);
+            console.log("Seven sleepQRes");
+            console.log(sleepQRes);
+            if (sleepQRes.docs.length !== 0)
+            {
+                this.setState({Seven: sleepQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue});
+            }
+            else
+            {
+                this.setState({Seven: 0});
+            };
+        }
+
+        retrieveSleepData();
+    }
+
+    async saveSleepData(c, dateNum)
+    {
+        const userAndDate = author.currentUser.uid + `${day_convert[week[dateNum].getDay()]}, ${week[dateNum].getDate()} ${month_convert[week[dateNum].getMonth()]} ${week[dateNum].getFullYear()}`;
+        const sleepQ = query(collection(database, "sleepData"), where("userDateSearch", "==", userAndDate));
+        const sleepQRes = await getDocs(sleepQ);
+        if (sleepQRes.docs.length !== 0)
+        {
+            const sleepID = sleepQRes.docs[0].id;
+            const trackerToUpdate = doc(getFirestore(), "sleepData", sleepID);
+            await updateDoc(trackerToUpdate, {value: c});
+        }
+        else
+        {
+            await addDoc (collection(database, "sleepData"), {
+                authorName: author.currentUser.displayName, 
+                authorID: author.currentUser.uid, 
+                date: week[dateNum],
+                dateStr: `${day_convert[week[dateNum].getDay()]}, ${week[dateNum].getDate()} ${month_convert[week[dateNum].getMonth()]} ${week[dateNum].getFullYear()}`,
+                value: c,
+                userDateSearch: userAndDate
+            }
+            );
+        }
+    }
 
     handleChangeOne(event) {
             this.setState({hours_one: event.target.value},);
@@ -70,7 +195,7 @@ class SleepTracker extends React.Component {
     handleSubmitOne() {
         if(this.state.hours_one > 0 && this.state.hours_one <= 24 && this.state.hours_one % 1 === 0)
         {
-            this.setState({One: this.state.hours_one/1, hours_one: ''});
+            this.setState({One: this.state.hours_one/1, hours_one: ''}, () => this.saveSleepData(this.state.One, 0));
         }
     }
 
@@ -81,7 +206,7 @@ class SleepTracker extends React.Component {
     handleSubmitTwo() {
         if(this.state.hours_two > 0 && this.state.hours_two <= 24 && this.state.hours_two % 1 === 0)
         {
-            this.setState({Two: this.state.hours_two/1, hours_two: ''});
+            this.setState({Two: this.state.hours_two/1, hours_two: ''}, () => this.saveSleepData(this.state.Two, 1));
         }
     }
 
@@ -92,7 +217,7 @@ class SleepTracker extends React.Component {
     handleSubmitThree() {
         if(this.state.hours_three > 0 && this.state.hours_three <= 24 && this.state.hours_three % 1 === 0)
         {
-            this.setState({Three: this.state.hours_three/1, hours_three: ''});
+            this.setState({Three: this.state.hours_three/1, hours_three: ''}, () => this.saveSleepData(this.state.Three, 2));
         }
     }
 
@@ -103,7 +228,7 @@ class SleepTracker extends React.Component {
     handleSubmitFour() {
         if(this.state.hours_four > 0 && this.state.hours_four <= 24 && this.state.hours_four % 1 === 0)
         {
-            this.setState({Four: this.state.hours_four/1, hours_four: ''});
+            this.setState({Four: this.state.hours_four/1, hours_four: ''}, () => this.saveSleepData(this.state.Four, 3));
         }
     }
 
@@ -114,7 +239,7 @@ class SleepTracker extends React.Component {
     handleSubmitFive() {
         if(this.state.hours_five > 0 && this.state.hours_five <= 24 && this.state.hours_five % 1 === 0)
         {
-            this.setState({Five: this.state.hours_five/1, hours_five: ''});
+            this.setState({Five: this.state.hours_five/1, hours_five: ''}, () => this.saveSleepData(this.state.Five, 4));
         }
     }
 
@@ -125,7 +250,7 @@ class SleepTracker extends React.Component {
     handleSubmitSix() {
         if(this.state.hours_six > 0 && this.state.hours_six <= 24 && this.state.hours_six % 1 === 0)
         {
-            this.setState({Six: this.state.hours_six/1, hours_six: ''});
+            this.setState({Six: this.state.hours_six/1, hours_six: ''}, () => this.saveSleepData(this.state.Six, 5));
         }
     }
 
@@ -137,7 +262,7 @@ class SleepTracker extends React.Component {
     handleSubmitSeven() {
         if(this.state.hours_seven > 0 && this.state.hours_seven <= 24 && this.state.hours_seven % 1 === 0)
         {
-            this.setState({Seven: this.state.hours_seven/1, hours_seven: ''});
+            this.setState({Seven: this.state.hours_seven/1, hours_seven: ''}, () => this.saveSleepData(this.state.Seven, 6));
         }
     }
 
@@ -145,6 +270,9 @@ class SleepTracker extends React.Component {
         return (
         <>
         <div>Sleep Tracker</div>
+        <div>
+                <Link to="/SleepTrackerSearch">Search Past Entries</Link>
+        </div>
         <br/>
         <div>{day_convert[week[6].getDay()]}, {week[6].getDate()} {month_convert[week[6].getMonth()]} {week[6].getFullYear()}</div>
         <div>{this.state.Seven}</div>
@@ -179,4 +307,5 @@ class SleepTracker extends React.Component {
     }
 }
 
+export {day_convert, month_convert};
 export default SleepTracker;
