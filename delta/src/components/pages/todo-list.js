@@ -11,15 +11,20 @@ function ToDoList()
     function handleTask()
     {
         let val = document.getElementById("taskValue").value;
-        let tempTodoitems = todoitems;
+        let tempTodoitems = [];
         
         if (todoitems.includes(val) === false) {
+            for (let i = 0; i < todoitems.length; i++)
+            {
+                tempTodoitems.push(todoitems[i]);
+            }
             tempTodoitems.push(val);
             setToDoItems(tempTodoitems); 
         }
         document.getElementById("taskValue").value = ''; 
         console.log(todoitems);
     }
+
 
     return (
         <div>
