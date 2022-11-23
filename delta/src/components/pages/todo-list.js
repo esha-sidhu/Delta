@@ -1,13 +1,24 @@
 import React, {useEffect, useState} from 'react';
 
+
 function ToDoList()
 {
     const [todoitems, setToDoItems] = useState([]);
+    const taskCount = useState(0);
+    const taskMax = 10;
 
-    async function handleTask() 
+
+    function handleTask()
     {
         let val = document.getElementById("taskValue").value;
-        setToDoItems(val);
+        let tempTodoitems = todoitems;
+        
+        if (todoitems.includes(val) === false) {
+            tempTodoitems.push(val);
+            setToDoItems(tempTodoitems); 
+        }
+        document.getElementById("taskValue").value = ''; 
+        console.log(todoitems);
     }
 
     return (
@@ -29,18 +40,24 @@ function ToDoList()
                     <br></br><br></br>
                 </font>
                 <div id="newItem">
-                    <label for="itemAdditionPrompt">Add a task here:</label>
+                    <label>Add a task here:</label>
                     <input type="text" size="20" id="taskValue" placeholder="To-Do" name="taskValue"></input>
                     <button onClick={handleTask}>Add</button>
                 </div>
             </div>
-            <div>
-                {todoitems}
-            </div>
+            <ol>
+                {todoitems.map((val) => {
+                    return (
+                        <div key={val}>
+                            <input type="checkbox"></input>
+                            {val}
+                        </div>
+                    );
+                })}
+            </ol>
         </div>
     );
 
 }
 
-export default ToDoList;
-
+export default ToDoList; 
