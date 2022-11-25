@@ -2,6 +2,21 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import '../../styles/journal-style.css'
 
+function SaveText1()
+{
+    var text1 = document.getElementById("Text1").value;
+}
+
+function SaveText2()
+{
+    var text2 = document.getElementById("Text2").value;
+}
+
+function SaveText3()
+{
+    var text3 = document.getElementById("Text3").value;
+}
+
 function Journal()
 {
     return (
@@ -11,14 +26,17 @@ function Journal()
             </div>
             <div>
                 <br/>
-                <input type="text" className='input-one'></input>
+                <textarea id="Text1" cols="40" rows="5" className='input-one'></textarea>
                 <br/>
+                <button onClick={() => SaveText1()}>save</button>
                 <br/>
-                <input type="text" className='input-two'></input>
+                <textarea id="Text2" cols="40" rows="5" className='input-two'></textarea>
                 <br/>
+                <button onClick={() => SaveText2()}>save</button>
                 <br/>
-                <input type="text" className='input-three'></input>
+                <textarea id="Text3" cols="40" rows="5" className='input-three'></textarea>
                 <br/>
+                <button onClick={() => SaveText3()}>save</button>
                 <br/>
                 <Link to="/board">Go back to your bulletin board</Link>
             </div>
