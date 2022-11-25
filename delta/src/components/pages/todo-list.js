@@ -13,16 +13,48 @@ function ToDoList()
         let val = document.getElementById("taskValue").value;
         let tempTodoitems = [];
         
-        if (todoitems.includes(val) === false) {
+        if (todoitems.includes(val) === false && val !== '') {
             for (let i = 0; i < todoitems.length; i++)
             {
                 tempTodoitems.push(todoitems[i]);
             }
             tempTodoitems.push(val);
             setToDoItems(tempTodoitems); 
+            console.log(todoitems);
         }
         document.getElementById("taskValue").value = ''; 
-        console.log(todoitems);
+    }
+
+    function handleDelete(val)
+    {
+        // TODO: fix bug where X button doesn't render button click until second press
+        // explanation: this only happens when the user first enters an element. Once the
+        // element is added, any X button click will not be registered but any other
+        // button click after that does (so only the very very first button click after adding
+        // a new item won't get registered, weird huh)
+
+        // this is also a bug with the list because when an item is added, the console
+        // log doesn't get the updated list until the next action is made (which is weird
+        // because the list on the website visually does get updated)
+
+        var copiedList = [];
+        const indexOfClick = todoitems.indexOf(val);
+
+        for (let i = 0; i < todoitems.length; i++)
+        {
+            if (i !== indexOfClick)
+            {
+                copiedList.push(todoitems[i]);
+            }
+            console.log(copiedList);
+            setToDoItems(copiedList);
+        }
+
+        console.log(val);
+        console.log(todoitems.includes(val));
+        
+        // idea: implement by making there max of 10 buttons and then
+        // just index the value with the button's
     }
 
 
@@ -55,7 +87,8 @@ function ToDoList()
                     return (
                         <div key={val}>
                             <input type="checkbox"></input>
-                            {val}
+                            {val} &ensp;
+                            <button type="button" onClick={() => handleDelete(val)}> X </button>
                         </div>
                     );
                 })}
