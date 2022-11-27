@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Navigation from './navbar';
 import '../../styles/journal-style.css'
 
 function SaveText1()
@@ -21,6 +22,7 @@ function Journal()
 {
     return (
         <div>
+            <Navigation />
             <div>
                 Your journal!
             </div>

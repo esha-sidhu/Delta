@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-
+import Navigation from './navbar';
 
 function ToDoList()
 {
@@ -83,6 +83,7 @@ function ToDoList()
 
     return (
         <div>
+            <Navigation />
             <div>
                 <br></br>
                 <font size="6">
