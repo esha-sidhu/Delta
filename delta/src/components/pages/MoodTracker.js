@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {Link} from "react-router-dom";
+import Navigation from './navbar';
 
 function MoodTracker()
 {
     return(
         <div>
+            <Navigation />
             <header>
                 Mood Tracker
             </header>

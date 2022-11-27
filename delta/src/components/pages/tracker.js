@@ -1,10 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Navigation from './navbar';
 
 function Tracker()
 {
     return (
         <div>
+            <Navigation />
             <div>
                 Your trackers!
             </div>
