@@ -13,7 +13,7 @@ function Board()
                 <Link to="/tracker">Trackers</Link>
             </div>
             <div>
-                <Link to="/journel">Journel</Link>
+                <Link to="/journal">Journal</Link>
             </div>
             <div>
                 <Link to="/settings">Settings</Link>
