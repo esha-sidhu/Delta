@@ -24,6 +24,9 @@ function Board()
             <div>
                 <ToDoList/>
             </div>
+            <div>
+                <Link to="/archive">Archived Tasks</Link>
+            </div>
         </div>
     );
 }

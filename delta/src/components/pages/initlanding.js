@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
 import SignUp from "./signup";
 import LogIn from "./login";
 import Board from "./board";
+import ArchiveSearch from './archive';
 import Tracker from "./tracker";
 import Journel from "./journal";
 import Settings from "./settings";
@@ -22,6 +23,7 @@ function InitLanding()
                 <Route path = "/signup" element={<SignUp />} />
                 <Route path = "/login" element={<LogIn />} />
                 <Route path = "/board" element={<Board />} />
+                <Route path = "/archive" element={<ArchiveSearch />} />
                 <Route path = "/tracker" element={<Tracker />} />
                 <Route path = "/sleeptracker" element={<SleepTracker />} />
                 <Route path = "/SleepTrackerSearch" element={<SleepTrackerSearch/>}/>
