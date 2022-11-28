@@ -1,7 +1,7 @@
 // import Unsplash, { toJson } from 'unsplash-js';
 import { createApi, search } from 'unsplash-js';
 import React, { useState, useEffect } from "react";
-import './images.css';
+import '../../styles/images.css';
 
 function SearchImages3() {
     const[image, setImage] = useState([]);

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './components/App';
 import InitLanding from './components/pages/initlanding.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
