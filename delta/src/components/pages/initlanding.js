@@ -13,6 +13,7 @@ import WaterTracker from "../WaterTracker";
 import WaterTrackerSearch from "./WaterTrackerSearch";
 import MoodTracker from "./MoodTracker";
 import MoodTrackerSearch from './MoodTrackerSearch';
+import SearchImages from './images';
 
 function InitLanding()
 {
@@ -33,6 +34,7 @@ function InitLanding()
                 <Route path = "/WaterTrackerSearch" element={<WaterTrackerSearch/>}/>
                 <Route path = "/MoodTracker" element={<MoodTracker />} />
                 <Route path = "/MoodTrackerSearch" element={<MoodTrackerSearch/>}/>
+                <Route path='/searchImages' element={<SearchImages/>}/>
             </Routes>
         </BrowserRouter>
     );

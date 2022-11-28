@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import ToDoList from "./todo-list";
 // import App from '../App';
 import Navigation from './navbar';
+import SearchImages from './images';
 
 function Board()
 {
@@ -20,6 +21,9 @@ function Board()
             </div>
             <div>
                 <Link to="/settings">Settings</Link>
+            </div>
+            <div>
+                <Link to="/searchImages">Search Images</Link>
             </div>
             <div>
                 <Link to="/">Log Out</Link>
