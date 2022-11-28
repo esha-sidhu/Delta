@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {collection, getDocs, query, where, orderBy} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {day_convert, month_convert} from './sleeptracker';
+import '../../styles/sleeptrackersearchstyle.css'
+import {Link} from 'react-router-dom'
 
 function SleepTrackerSearch()
 {
@@ -191,36 +193,44 @@ function SleepTrackerSearch()
     }
 
     return(
-        <div>
-            <header>
-                Search Past Sleep Tracker Entries
-            </header>
+        <div className='page'>
+            <div className='title'>
+                Your Sleep Data
+            </div>
             <div>
-                <div>
-                    Start Date:
-                    <input type="date" min={minDate} max={maxDate} id="start"/>
+                <br/>
+                <div className='wrap-top3'>
+                <div className='box3'>
+                    <div className='text'> Start Date : {' '}
+                    <input className='input' type="date" min={minDate} max={maxDate} id="start"/>
+                    </div>
+                </div>
+                <div className='box3'>
+                    <div className='text'> End Date : {' '}
+                    <input className='input' type="date" min={minDate} max={maxDate} id="end"/>
+                    </div>
                 </div>
                 <div>
-                    End Date:
-                    <input type="date" min={minDate} max={maxDate} id="end"/>
+                <button className='button3' onClick={handleSearch}>Search</button>
                 </div>
-                <button onClick={handleSearch}>Search</button>
                 {invalidSearch}
+            </div>
             </div>
             <div>
                 {sleepEntries.map(({dateEntry, amountEntry}) => {
                     return (
-                    <div key={dateEntry}>
-                        <div>
+                    <div className='data-box' key={dateEntry}>
+                        <div className='data'>
                             {dateEntry}
                         </div>
-                        <div>
+                        <div className='hours'>
                             {amountEntry} hours
                         </div>
                     </div>
                     );
                 })}
             </div>
+            <Link className='a' to='/sleeptracker'>Go Back</Link>
         </div>
     );
 }

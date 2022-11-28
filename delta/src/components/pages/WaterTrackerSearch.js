@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {collection, getDocs, query, where, orderBy} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {convertDateObjectToStr} from './WaterTracker';
+import '../../styles/watertrackersearchstyle.css'
+import {Link} from 'react-router-dom'
 
 function WaterTrackerSearch()
 {
@@ -191,36 +193,44 @@ function WaterTrackerSearch()
     }
 
     return(
-        <div>
-            <header>
-                Search Past Water Tracker Entries
-            </header>
+        <div className='page'>
+            <div className='title1'>
+                Your Water Intake
+            </div>
             <div>
-                <div>
-                    Start Date:
-                    <input type="date" min={minDate} max={maxDate} id="start"/>
+                <br/>
+                <div className='wrap-top3'>
+                <div className='box4'>
+                    <div className='text'> Start Date : {' '}
+                    <input className='input' type="date" min={minDate} max={maxDate} id="start"/>
+                    </div>
+                </div>
+                <div className='box4'>
+                    <div className='text'> End Date : {' '}
+                    <input className='input' type="date" min={minDate} max={maxDate} id="end"/>
+                    </div>
                 </div>
                 <div>
-                    End Date:
-                    <input type="date" min={minDate} max={maxDate} id="end"/>
+                <button className='button4' onClick={handleSearch}>Search</button>
                 </div>
-                <button onClick={handleSearch}>Search</button>
                 {invalidSearch}
+            </div>
             </div>
             <div>
                 {waterEntries.map(({dateEntry, amountEntry}) => {
                     return (
-                    <div key={dateEntry}>
-                        <div>
+                    <div className='data-box1' key={dateEntry}>
+                        <div className='data'>
                             {dateEntry}
                         </div>
-                        <div>
+                        <div className='amounts'>
                             {amountEntry} fluid ounces
                         </div>
                     </div>
                     );
                 })}
             </div>
+            <Link className='a1' to='/watertracker'>Go Back</Link>
         </div>
     );
 }
