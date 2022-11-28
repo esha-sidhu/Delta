@@ -18,10 +18,10 @@ function LogIn()
     return (
         <div>
             <div>
-                login
+                Sign in with your google account
             </div>
             <div>
-                <button onClick={googleLogIn}>Log In</button>
+                <button onClick={googleLogIn}>Sign In</button>
             </div>
         </div>
     );
