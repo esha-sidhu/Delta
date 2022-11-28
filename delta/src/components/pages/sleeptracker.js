@@ -3,6 +3,7 @@ import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc}
 import {database, author} from '../../firebase';
 import {Link} from "react-router-dom";
 import '../../styles/sleeptrackerstyle.css'
+import Navigation from './navbar'
 
 const week = [new Date()]
 week[0].setHours(0, 0, 0, 0);
@@ -267,8 +268,11 @@ class SleepTracker extends React.Component {
     render() {
         return (
         <div className='page'>
+        <Navigation/>
+        <div className='wrap-top'>
         <div className='title'>Sleep Tracker</div>
-        <Link to="/SleepTrackerSearch">Search Past Entries</Link>
+        <Link className='a' to="/SleepTrackerSearch">Search Past Entries</Link>
+        </div>
         <br/>
         <br/>
         <div className='wrap'>

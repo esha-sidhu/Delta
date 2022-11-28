@@ -14,15 +14,14 @@
     font-weight: bold;
     -webkit-text-stroke: 2.5px black;
     background-color: #6588CB;
-    
+    margin-top: -0.5%;
 }
 
 .box {
     text-align: center;
-    margin-top: 0.5%;
     margin-left: 2%;
     width: 20vw;
-    height: 18vh;
+    height: 21vh;
     padding: 20px;
     text-align: center;
     background-color: #E3F0FF;
@@ -47,12 +46,14 @@
 .wrap {
     display: flex;
     justify-content: space-around;
+    margin-bottom: -1%;
+    margin-top: -1%;
 }
 
 .wrap-two {
     display: flex;
     justify-content: space-around;
-    padding-top: 60px;
+    padding-top: 4.75%;
 }
 
 .button {
@@ -74,3 +75,35 @@
     box-shadow: 0 3px black;
     transform: translateY(2px);
   }
+
+.a {
+    background-color: #9DBDFF;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 83%;
+    margin-right: 4%;
+    padding: 8px;
+    margin-top: 0.5%;
+}
+
+.a:hover {
+    background-color: #6588CB;
+    text-decoration: none;
+    color: black;
+}
+
+.a:active {
+    background-color: #6588CB;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+.wrap-top {
+    display: flex;
+    flex-direction:column;
+}
