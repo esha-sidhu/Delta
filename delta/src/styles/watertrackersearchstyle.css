@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Nerko+One');
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.page {
+    background-color: white;
+    height: 100vh;
+}
+
+.title1 {
+    font-family: 'Shadows Into Light Two';
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke: 2.5px black;
+    background-color: #008AD8;
+    margin-top: -0.5%;
+}
+
+.box4 {
+    text-align: center;
+    margin-left: 2%;
+    width: 14vw;
+    height: 4vh;
+    padding: 20px;
+    text-align: center;
+    background-color: #D9F3FF;
+    border-radius: 10px;
+}
+
+.text {
+    font-family: 'Nerko One';
+    font-size: 25px;
+    text-align: baseline;
+}
+
+.input {
+    height: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button4 {
+    background-color: #66BFFF;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+    line-height: 25px;
+    margin-left: 40%;
+}
+
+.data {
+    font-family: 'Nerko One';
+    font-size: 27px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.amounts {
+    font-family: 'Patrick Hand';
+    font-size: 23px;
+    text-align: center;
+    font-weight: 900;
+    background-color: #66BFFF;
+    border-radius: 5px;
+}
+
+.data-box1 {
+    background-color: #D9F3FF;
+    width: 18vw;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-left: 40%;
+}
+
+.button4:hover {
+    background-color: #008AD8;
+}
+
+.button4:active {
+    background-color: #008AD8;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+  }
+
+.a1 {
+    background-color: #66BFFF;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 83%;
+    margin-right: 4%;
+    padding: 8px;
+    margin-top: 0.5%;
+}
+
+.a1:hover {
+    background-color: #008AD8;
+    text-decoration: none;
+    color: black;
+}
+
+.a1:active {
+    background-color: #008AD8;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+.wrap-top3 {
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items: baseline;
+}
