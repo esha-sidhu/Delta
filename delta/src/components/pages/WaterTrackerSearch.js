@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {collection, getDocs, query, where, orderBy} from 'firebase/firestore';
 import {database, author} from '../../firebase';
-import {convertDateObjectToStr} from '../WaterTracker';
+import {convertDateObjectToStr} from './WaterTracker';
 
 function WaterTrackerSearch()
 {
