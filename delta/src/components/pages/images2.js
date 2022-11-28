@@ -3,7 +3,7 @@ import { createApi, search } from 'unsplash-js';
 import React, { useState, useEffect } from "react";
 import './images.css';
 
-function SearchImages() {
+function SearchImages2() {
     const[image, setImage] = useState([]);
 
     function HandleClick() {
@@ -80,4 +80,4 @@ function searchImages() {
 }
 */
 
-export default SearchImages;
+export default SearchImages2;

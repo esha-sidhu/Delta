@@ -14,6 +14,9 @@ import WaterTrackerSearch from "./WaterTrackerSearch";
 import MoodTracker from "./MoodTracker";
 import MoodTrackerSearch from './MoodTrackerSearch';
 import SearchImages from './images';
+import SearchImages2 from './images2';
+import SearchImages3 from './images3';
+import SearchImages4 from './images4';
 
 function InitLanding()
 {
@@ -35,6 +38,9 @@ function InitLanding()
                 <Route path = "/MoodTracker" element={<MoodTracker />} />
                 <Route path = "/MoodTrackerSearch" element={<MoodTrackerSearch/>}/>
                 <Route path='/searchImages' element={<SearchImages/>}/>
+                <Route path='/searchImages2' element={<SearchImages2/>}/>
+                <Route path='/searchImages3' element={<SearchImages3/>}/>
+                <Route path='/searchImages4' element={<SearchImages4/>}/>
             </Routes>
         </BrowserRouter>
     );
