@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {collection, getDocs, query, where, orderBy} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {convertDateObjectToStr} from './MoodTracker';
+import {Link} from 'react-router-dom'
+import '../../styles/moodtrackersearchstyle.css'
 
 function MoodTrackerSearch()
 {
@@ -191,36 +193,42 @@ function MoodTrackerSearch()
     }
 
     return(
-        <div>
-            <header>
-                Search Past Mood Tracker Entries
-            </header>
+        <div className='page'>
+            <div className='title2'>
+                Your Past Moods
+            </div>
             <div>
-                <div>
-                    Start Date:
-                    <input type="date" min={minDate} max={maxDate} id="start"/>
+                <br/>
+                <div className='wrap-top3'>
+                <div className='box5'>
+                <div className='text'> Start Date : {' '}
+                    <input className='input-search' type="date" min={minDate} max={maxDate} id="start"/>
+                    </div>
                 </div>
-                <div>
-                    End Date:
-                    <input type="date" min={minDate} max={maxDate} id="end"/>
+                <div className='box5'>
+                    <div className='text'> End Date : {' '}
+                    <input className='input-search' type="date" min={minDate} max={maxDate} id="end"/>
+                    </div>
                 </div>
-                <button onClick={handleSearch}>Search</button>
+                <button className='button5' onClick={handleSearch}>Search</button>
                 {invalidSearch}
+            </div>
             </div>
             <div>
                 {moodEntries.map(({dateEntry, amountEntry}) => {
                     return (
-                    <div key={dateEntry}>
-                        <div>
+                    <div className='data-box2' key={dateEntry}>
+                        <div className='data'>
                             {dateEntry}
                         </div>
-                        <div>
+                        <div className='moods'>
                             {amountEntry}
                         </div>
                     </div>
                     );
                 })}
             </div>
+            <Link className='a2' to='/moodtracker'>Go Back</Link>
         </div>
     );
 }

@@ -7,24 +7,24 @@
     height: 100vh;
 }
 
-.title1 {
+.title2 {
     font-family: 'Shadows Into Light Two';
     font-size: 50px;
     text-align: center;
     font-weight: bold;
-    -webkit-text-stroke: 2.5px black;
-    background-color: #008AD8;
+    -webkit-text-stroke: 2.5px #F5E0EC;
+    background-color: #E760A4;
     margin-top: -0.5%;
 }
 
-.box4 {
+.box5 {
     text-align: center;
     margin-left: 2%;
     width: 14vw;
     height: 4vh;
     padding: 20px;
     text-align: center;
-    background-color: #D9F3FF;
+    background-color: #FFE4F8;
     border-radius: 10px;
 }
 
@@ -47,51 +47,51 @@
     margin-top: 2%;
 }
 
-.amounts {
+.moods {
     font-family: 'Patrick Hand';
     font-size: 23px;
     text-align: center;
     font-weight: 900;
-    background-color: #66BFFF;
+    background-color: #F8B3D1;
     border-radius: 5px;
 }
 
-.data-box1 {
-    background-color: #D9F3FF;
+.data-box2 {
+    background-color: #F5E0EC;
     width: 18vw;
     border-radius: 5px;
     margin-top: 2%;
     margin-left: 40%;
 }
 
-.button4 {
-    background-color: #66BFFF;
+.button5 {
+    background-color: #F8B3D1;
     font-size: 30px;
     font-family: 'Nerko One';
     border-radius: 10px;
-    border-color: black;
+    border-color: #F5E0EC;
     cursor: pointer;
     line-height: 25px;
-    margin-left: 40%;
+    margin-left: 2%;
 }
 
-.button4:hover {
-    background-color: #008AD8;
+.button5:hover {
+    background-color: #E760A4;
 }
 
-.button4:active {
-    background-color: #008AD8;
+.button5:active {
+    background-color: #E760A4;
     box-shadow: 0 3px black;
     transform: translateY(2px);
   }
 
-.a1 {
-    background-color: #66BFFF;
-    color: black;
+.a2 {
+    background-color: #F8B3D1;
+    color: white;
     font-size: 25px;
     font-family: 'Nerko One';
     border-radius: 7px;
-    border: 2px solid black;
+    border: 2px solid #F5E0EC;
     cursor: pointer;
     text-decoration: none;
     margin-left: 83%;
@@ -100,14 +100,14 @@
     margin-top: 0.5%;
 }
 
-.a1:hover {
-    background-color: #008AD8;
+.a2:hover {
+    background-color: #E760A4;
     text-decoration: none;
-    color: black;
+    color: #F5E0EC;
 }
 
-.a1:active {
-    background-color: #008AD8;
+.a2:active {
+    background-color: #E760A4;
     box-shadow: 0 3px black;
     transform: translateY(2px);
 }

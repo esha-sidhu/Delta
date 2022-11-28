@@ -34,21 +34,10 @@
     text-align: baseline;
 }
 
-.input {
+.input-search {
     height: 20px;
     font-size: 16px;
     text-align: center;
-}
-
-.button3 {
-    background-color: #9DBDFF;
-    font-size: 30px;
-    font-family: 'Nerko One';
-    border-radius: 10px;
-    border-color: black;
-    cursor: pointer;
-    line-height: 25px;
-    margin-left: 40%;
 }
 
 .data {
@@ -72,6 +61,17 @@
     width: 18vw;
     border-radius: 5px;
     margin-top: 2%;
+    margin-left: 40%;
+}
+
+.button3 {
+    background-color: #9DBDFF;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+    line-height: 25px;
     margin-left: 40%;
 }
 

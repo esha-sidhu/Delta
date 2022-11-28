@@ -8,7 +8,7 @@ import '../../styles/watertrackerstyle.css'
 function WaterTracker()
 {
     return(
-        <div className='page1'>
+        <div className='page'>
             <Navigation />
             
             <div className='wrap-top'>
@@ -143,13 +143,13 @@ function WaterEntry({dateInput})
 
     return(
         <div>
-            <div className='date1'>
+            <div className='date'>
                 {dateStr}
             </div>
             <div className='amount'>
                 {amount} fluid ounces
             </div>
-            <div className='input1'>
+            <div className='input'>
                 <input type="text" placeholder="Input positive whole number" size="30" id={entryName}/>
                 <br/>
                 <br/>

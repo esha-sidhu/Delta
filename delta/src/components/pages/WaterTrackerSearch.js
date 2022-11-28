@@ -202,12 +202,12 @@ function WaterTrackerSearch()
                 <div className='wrap-top3'>
                 <div className='box4'>
                     <div className='text'> Start Date : {' '}
-                    <input className='input' type="date" min={minDate} max={maxDate} id="start"/>
+                    <input className='input-search' type="date" min={minDate} max={maxDate} id="start"/>
                     </div>
                 </div>
                 <div className='box4'>
                     <div className='text'> End Date : {' '}
-                    <input className='input' type="date" min={minDate} max={maxDate} id="end"/>
+                    <input className='input-search' type="date" min={minDate} max={maxDate} id="end"/>
                     </div>
                 </div>
                 <div>
