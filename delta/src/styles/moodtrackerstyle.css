@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Nerko+One');
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.page {
+    background-color: white;
+    height: 100vh;
+}
+
+.title2 {
+    font-family: 'Shadows Into Light Two';
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke: 2.5px 	#F5E0EC;
+    background-color: #E760A4;
+    margin-top: -0.5%;
+}
+
+.box2 {
+    text-align: center;
+    margin-left: 2%;
+    width: 20vw;
+    height: 21vh;
+    padding: 20px;
+    text-align: center;
+    background-color: #FFE4F8;
+    border-radius: 10px;
+}
+
+.date {
+    font-family: 'Nerko One';
+    font-size: 25px;
+}
+
+.input {
+    height: 20px;
+}
+
+.mood {
+    font-family: 'Patrick Hand';
+    font-size: 25px;
+    line-height: 60px;
+    font-weight: 500;
+}
+
+.wrap2 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: -1%;
+    margin-top: -1%;
+    padding-bottom: 5%;
+}
+
+.wrap-two2 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.4%;
+}
+
+.button2 {
+    background-color: #F8B3D1;
+    font-size: 20px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: #F5E0EC;
+    border-style: solid;
+    cursor: pointer;
+    line-height: 25px;
+    color: white;
+}
+
+.button2:hover {
+    background-color: #E760A4;
+}
+
+.button2:active {
+    background-color: #E760A4;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+  }
+
+.a2 {
+    background-color: #F8B3D1;
+    color: white;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid #F5E0EC;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 83%;
+    margin-right: 4%;
+    padding: 8px;
+    margin-top: 0.5%;
+}
+
+.a2:hover {
+    background-color: #E760A4;
+    text-decoration: none;
+    color: #F5E0EC;
+}
+
+.a2:active {
+    background-color: #E760A4;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+.wrap-top2 {
+    display: flex;
+    flex-direction:column;
+}

@@ -3,38 +3,49 @@ import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc}
 import {database, author} from '../../firebase';
 import {Link} from "react-router-dom";
 import Navigation from './navbar';
+import '../../styles/moodtrackerstyle.css'
 
 function MoodTracker()
 {
     return(
-        <div>
+        <div className='page'>
+            
             <Navigation />
-            <header>
+
+            <div className='wrap-top2'>
+            <div className='title2'>
                 Mood Tracker
-            </header>
-            <div>
-                <Link to="/MoodTrackerSearch">Search Past Entries</Link>
             </div>
-            <div>
+                <Link className='a2' to="/MoodTrackerSearch">Search Past Entries</Link>
+            </div>
+            <br/>
+            <br/>
+            <div className='wrap2'>
+            <div className='box2'>
                 <MoodEntry dateInput={0}/>
             </div>
-            <div>
+            <div className='box2'>
                 <MoodEntry dateInput={1}/>
             </div>
-            <div>
+            <div className='box2'>
                 <MoodEntry dateInput={2}/>
             </div>
-            <div>
+            </div>
+            <div className='wrap2'>
+            <div className='box2'>
                 <MoodEntry dateInput={3}/>
             </div>
-            <div>
+            <div className='box2'>
                 <MoodEntry dateInput={4}/>
             </div>
-            <div>
+            <div className='box2'>
                 <MoodEntry dateInput={5}/>
             </div>
-            <div>
+            </div>
+            <div className='wrap-two2'>
+            <div className='box2'>
                 <MoodEntry dateInput={6}/>
+            </div>
             </div>
         </div>
     );
@@ -111,13 +122,13 @@ function MoodEntry({dateInput})
 
     return(
         <div>
-            <div>
+            <div className='date'>
                 {dateStr}
             </div>
-            <div>
+            <div className='mood'>
                 {amount}
             </div>
-            <div>
+            <div className='input'>
                 <select id={entryName}>
                     <option value="-">-</option>
                     <option value="Excited">Excited</option>
@@ -126,7 +137,9 @@ function MoodEntry({dateInput})
                     <option value="Sad">Sad</option>
                     <option value="Stressed">Stressed</option>
                 </select>
-                <button onClick={handleEntry}>Change</button>
+                <br/>
+                <br/>
+                <button className='button2' onClick={handleEntry}>Change</button>
             </div>
         </div>
     );
