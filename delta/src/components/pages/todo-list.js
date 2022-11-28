@@ -104,6 +104,7 @@ function ToDoList()
     function handleTask()
     {
         let val = document.getElementById("taskValue").value;
+        val = val.trim();
         
         // adds inputed task to the to-do list if not a repeat and there
             // are less than the max number of tasks
@@ -227,7 +228,10 @@ function ToDoList()
                 newNumOfTasks = newNumOfTasks + 1;
             }
         }
-        setArchivedTasks(tempArchivedTasks, saveArchiveData(tempArchivedTasks));
+        if (tempArchivedTasks.length !== 0)
+        {
+            setArchivedTasks(tempArchivedTasks, saveArchiveData(tempArchivedTasks));
+        }
         setChecked(tempChecked);
         setToDoItems(tempList, saveTaskData(tempList, tempChecked));
         setNumOfTasks(newNumOfTasks);
