@@ -15,6 +15,8 @@
     -webkit-text-stroke: 2.5px #F5E0EC;
     background-color: #E760A4;
     margin-top: -0.5%;
+    letter-spacing: 4px;
+    color: #F5E0EC;
 }
 
 .box5 {
@@ -73,6 +75,7 @@
     cursor: pointer;
     line-height: 25px;
     margin-left: 2%;
+    color: white;
 }
 
 .button5:hover {
@@ -83,7 +86,7 @@
     background-color: #E760A4;
     box-shadow: 0 3px black;
     transform: translateY(2px);
-  }
+}
 
 .a2 {
     background-color: #F8B3D1;
