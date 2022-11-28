@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nerko+One');
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
-.page2 {
+.page {
     background-color: white;
     height: 100vh;
 }
@@ -28,12 +28,12 @@
     border-radius: 10px;
 }
 
-.date2 {
+.date {
     font-family: 'Nerko One';
     font-size: 25px;
 }
 
-.input2 {
+.input {
     height: 20px;
 }
 
