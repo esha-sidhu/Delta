@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import ToDoList from "./todo-list";
+// import App from '../App';
+import Navigation from './navbar';
 
 function Board()
 {
     return (
         <div>
+            <Navigation /> 
             <div>
                 Welcome to your Bulletin Board!
             </div>

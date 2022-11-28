@@ -2,6 +2,7 @@ import React from 'react';
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {Link} from "react-router-dom";
+import Navigation from './navbar';
 
 const week = [new Date()]
 week[0].setHours(0, 0, 0, 0);
@@ -269,6 +270,7 @@ class SleepTracker extends React.Component {
     render() {
         return (
         <>
+        <Navigation />
         <div>Sleep Tracker</div>
         <div>
                 <Link to="/SleepTrackerSearch">Search Past Entries</Link>

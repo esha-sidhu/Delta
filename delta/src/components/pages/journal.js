@@ -2,6 +2,7 @@ import { addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc
 import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import { author, database } from '../../firebase';
+import Navigation from './navbar';
 import '../../styles/journal-style.css'
 
 function Journal()
@@ -135,6 +136,7 @@ function SaveText3()
 
     return (
         <div>
+            <Navigation />
             <div>
                 Your journal!
             </div>

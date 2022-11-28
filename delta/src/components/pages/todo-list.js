@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {onAuthStateChanged} from 'firebase/auth';
+import Navigation from './navbar';
 
 function ToDoList()
 {
@@ -243,6 +244,7 @@ function ToDoList()
 
     return (
         <div>
+            <Navigation />
             <div>
                 <br></br>
                 <font size="6">

@@ -1,10 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Navigation from './navbar';
 
 function Settings()
 {
     return (
         <div>
+            <Navigation />
             <div>
                 Settings
             </div>
