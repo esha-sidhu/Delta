@@ -3,7 +3,7 @@ import { createApi, search } from 'unsplash-js';
 import React, { useState, useEffect } from "react";
 
 function SearchImages() {
-    const[image, setImage] = useState("");
+    const[image, setImage] = useState([]);
     const [res, setRes] = useState([]);
 
     function HandleClick() {
@@ -12,10 +12,13 @@ function SearchImages() {
         unsplash.search.getPhotos({
             query: searchElement,
             page: 1,
-            perPage: 10
+            perPage: 20
           }).then(imageObj => {
-            const smallImg = imageObj.response.results[0].urls.small;
-            setImage(smallImg);
+            let temp = [];
+            for (let i = 0; i < 20; i++) {
+                temp.push(imageObj.response.results[i].urls.small);
+            }
+            setImage(temp);
           });
     }
 
@@ -40,7 +43,11 @@ function SearchImages() {
             type="text"
         />
         <button type="button" onClick={HandleClick}>Search</button>
-        <img src={image}></img>
+        {image.map((val) => {
+            return(
+                <img src={val}></img>
+            );
+        })}
     </div>
   );
 }
