@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Nerko+One');
+
+.a8 {
+    background-color: #9DBDFF;
+    color: black;
+    font-size: 40px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 30%;
+    height: 40vh;
+    text-align: center;
+}
+
+.a8:hover {
+    background-color: #6588CB;
+    text-decoration: none;
+    color: white;
+}
+
+.a8:active {
+    background-color: #6588CB;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}

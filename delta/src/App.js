@@ -1,30 +1,29 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
-import SignUp from "./signup";
-import LogIn from "./login";
-import Board from "./board";
-import ArchiveSearch from './archive';
-import Tracker from "./tracker";
-import Journal from "./journal";
-import Settings from "./settings";
-import SleepTracker from './sleeptracker';
-import SleepTrackerSearch from './SleepTrackerSearch';
-import WaterTracker from "./WaterTracker";
-import WaterTrackerSearch from "./WaterTrackerSearch";
-import MoodTracker from "./MoodTracker";
-import MoodTrackerSearch from './MoodTrackerSearch';
-import SearchImages from './images';
-import SearchImages2 from './images2';
-import SearchImages3 from './images3';
-import SearchImages4 from './images4';
+import LogIn from "./components/pages/login";
+import Board from "./components/pages/board";
+import ArchiveSearch from './components/pages/archive';
+import Tracker from "./components/pages/tracker";
+import Journal from "./components/pages/journal";
+import Settings from "./components/pages/settings";
+import SleepTracker from './components/pages/sleeptracker';
+import SleepTrackerSearch from './components/pages/SleepTrackerSearch';
+import WaterTracker from "./components/pages/WaterTracker";
+import WaterTrackerSearch from "./components/pages/WaterTrackerSearch";
+import MoodTracker from "./components/pages/MoodTracker";
+import MoodTrackerSearch from './components/pages/MoodTrackerSearch';
+import SearchImages from './components/pages/images';
+import SearchImages2 from './components/pages/images2';
+import SearchImages3 from './components/pages/images3';
+import SearchImages4 from './components/pages/images4';
+import './styles/appstyle.css'
 
-function InitLanding()
+function App()
 {
     return (
         <BrowserRouter>
             <Routes>
                 <Route exact path = "/" element={<Landing />} />
-                <Route path = "/signup" element={<SignUp />} />
                 <Route path = "/login" element={<LogIn />} />
                 <Route path = "/board" element={<Board />} />
                 <Route path = "/archive" element={<ArchiveSearch />} />
@@ -50,14 +49,9 @@ function Landing()
 {
     return (
         <div>
-            <div>
-                <Link to="/signup">Sign Up</Link>
-            </div>
-            <div>
-                <Link to="/login">Log In</Link>
-            </div>
+            <Link className='a8' to="/login">Log In</Link>
         </div>
     );
 }
 
-export default InitLanding;
+export default App;
