@@ -1,6 +1,7 @@
 // import Unsplash, { toJson } from 'unsplash-js';
 import { createApi, search } from 'unsplash-js';
 import React, { useState, useEffect } from "react";
+import './images.css';
 
 function SearchImages() {
     const[image, setImage] = useState([]);
@@ -12,14 +13,26 @@ function SearchImages() {
         unsplash.search.getPhotos({
             query: searchElement,
             page: 1,
-            perPage: 20
+            perPage: 20,
+            orientation: 'landscape'
           }).then(imageObj => {
             let temp = [];
+            if (imageObj.response.results.length === 0) {
+                setImage(temp);
+                return;
+            }
             for (let i = 0; i < 20; i++) {
+                if (imageObj.response.results.length === i) {
+                    break;
+                }
                 temp.push(imageObj.response.results[i].urls.small);
             }
             setImage(temp);
           });
+    }
+
+    function BackToDashboard() {
+        window.location.assign('/board');
     }
 
     /*
@@ -45,7 +58,7 @@ function SearchImages() {
         <button type="button" onClick={HandleClick}>Search</button>
         {image.map((val) => {
             return(
-                <img src={val}></img>
+                <button className='imageBox' id='boxed-image' onClick={BackToDashboard}><img src={val}></img></button>
             );
         })}
     </div>
