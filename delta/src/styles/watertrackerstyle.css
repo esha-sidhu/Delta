@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Nerko+One');
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.page1 {
+    background-color: white;
+    height: 100vh;
+}
+
+.title1 {
+    font-family: 'Shadows Into Light Two';
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke: 2.5px black;
+    background-color: #008AD8;
+    margin-top: -0.5%;
+}
+
+.box1 {
+    text-align: center;
+    margin-left: 2%;
+    width: 20vw;
+    height: 21vh;
+    padding: 20px;
+    text-align: center;
+    background-color: #D9F3FF;
+    border-radius: 10px;
+}
+
+.date1 {
+    font-family: 'Nerko One';
+    font-size: 25px;
+}
+
+.input1 {
+    height: 20px;
+}
+
+.amount {
+    font-family: 'Patrick Hand';
+    font-size: 20px;
+    line-height: 60px;
+}
+
+.wrap1 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: -1%;
+    margin-top: -1%;
+    padding-bottom: 5%;
+}
+
+.wrap-two1 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.4%;
+}
+
+.button1 {
+    background-color: #66BFFF;
+    font-size: 20px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.button1:hover {
+    background-color: #008AD8;
+}
+
+.button1:active {
+    background-color: #008AD8;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+  }
+
+.a1 {
+    background-color: #66BFFF;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 83%;
+    margin-right: 4%;
+    padding: 8px;
+    margin-top: 0.5%;
+}
+
+.a1:hover {
+    background-color: #008AD8;
+    text-decoration: none;
+    color: black;
+}
+
+.a1:active {
+    background-color: #008AD8;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+.wrap-top1 {
+    display: flex;
+    flex-direction:column;
+}

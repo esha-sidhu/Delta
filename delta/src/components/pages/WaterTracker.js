@@ -1,39 +1,62 @@
 import React, {useEffect, useState} from 'react';
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
-import {database, author} from '../firebase';
+import {database, author} from '../../firebase';
 import {Link} from "react-router-dom";
-import Navigation from './pages/navbar';
+import Navigation from './navbar';
+import '../../styles/watertrackerstyle.css'
 
 function WaterTracker()
 {
     return(
-        <div>
-            <header>
+        <div className='page1'>
+            <Navigation />
+            
+            <div className='wrap-top'>
+            <div className='title1'>
                 Water Tracker
-            </header>
-            <div>
-                <Link to="/WaterTrackerSearch">Search Past Entries</Link>
             </div>
-            <div>
+                <Link className='a1' to="/WaterTrackerSearch">Search Past Entries</Link>
+            </div>
+            <br/>
+            <br/>
+
+            <div className='wrap1'>
+
+            <div className='box1'>
                 <WaterEntry dateInput={0}/>
             </div>
-            <div>
+
+            <div className='box1'>
                 <WaterEntry dateInput={1}/>
             </div>
-            <div>
+
+            <div className='box1'>
                 <WaterEntry dateInput={2}/>
             </div>
-            <div>
+
+            </div>
+
+            <div className='wrap1'>
+
+            <div className='box1'>
                 <WaterEntry dateInput={3}/>
             </div>
-            <div>
+
+            <div className='box1'>
                 <WaterEntry dateInput={4}/>
             </div>
-            <div>
+
+            <div className='box1'>
                 <WaterEntry dateInput={5}/>
             </div>
-            <div>
+
+            </div>
+
+            <div className='wrap-two1'>
+
+            <div className='box1'>
                 <WaterEntry dateInput={6}/>
+            </div>
             </div>
         </div>
     );
@@ -120,16 +143,17 @@ function WaterEntry({dateInput})
 
     return(
         <div>
-            <Navigation />
-            <div>
+            <div className='date1'>
                 {dateStr}
             </div>
-            <div>
+            <div className='amount'>
                 {amount} fluid ounces
             </div>
-            <div>
+            <div className='input1'>
                 <input type="text" placeholder="Input positive whole number" size="30" id={entryName}/>
-                <button onClick={handleEntry}>Change</button>
+                <br/>
+                <br/>
+                <button className='button1' onClick={handleEntry}>Log</button>
             </div>
         </div>
     );

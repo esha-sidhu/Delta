@@ -9,7 +9,7 @@ import Journal from "./journal";
 import Settings from "./settings";
 import SleepTracker from './sleeptracker';
 import SleepTrackerSearch from './SleepTrackerSearch';
-import WaterTracker from "../WaterTracker";
+import WaterTracker from "./WaterTracker";
 import WaterTrackerSearch from "./WaterTrackerSearch";
 import MoodTracker from "./MoodTracker";
 import MoodTrackerSearch from './MoodTrackerSearch';
