@@ -210,17 +210,19 @@ function MoodTrackerSearch()
             <div className='title2'>
                 Your Past Moods
             </div>
+            <br/>
+            <Link className='a2' to='/moodtracker'>Go Back</Link>
             <div>
                 <br/>
                 <div className='wrap-top3'>
                 <div className='box5'>
                 <div className='text'> Start Date : {' '}
-                    <input className='input-search' type="date" min={minDate} max={maxDate} id="start"/>
+                    <input className='input-search' onKeyDown={(e) => e.preventDefault()} type="date" min={minDate} max={maxDate} id="start"/>
                     </div>
                 </div>
                 <div className='box5'>
                     <div className='text'> End Date : {' '}
-                    <input className='input-search' type="date" min={minDate} max={maxDate} id="end"/>
+                    <input className='input-search' onKeyDown={(e) => e.preventDefault()} type="date" min={minDate} max={maxDate} id="end"/>
                     </div>
                 </div>
                 <button className='button5' onClick={handleSearch}>Search</button>
@@ -241,7 +243,6 @@ function MoodTrackerSearch()
                     );
                 })}
             </div>
-            <Link className='a2' to='/moodtracker'>Go Back</Link>
         </div>
     );
 }
