@@ -7,7 +7,7 @@ import SearchImages from './images';
 import { onAuthStateChanged } from 'firebase/auth';
 import {collection, getDocs, query, where} from 'firebase/firestore';
 import {database, author} from '../../firebase';
-import './images.css';
+import '../../styles/images.css';
 
 function Board()
 {
