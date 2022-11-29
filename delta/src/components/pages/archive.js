@@ -214,15 +214,17 @@ function ArchiveSearch()
                 Archived Tasks
             </div>
             <br/>
+            <Link className='a3' to='/board'>Go Back</Link>
+            <br/>
             <div className='wrap-top3'>
                 <div className='box6'>
                     <div className='text'>  Start Date : {' '}
-                    <input className='input-search' type="date" min={minDate} max={maxDate} id="start"/>
+                    <input className='input-search' onKeyDown={(e) => e.preventDefault()} type="date" min={minDate} max={maxDate} id="start"/>
                     </div>
                 </div>
                 <div className='box6'>
                     <div className='text'> End Date : {' '} 
-                    <input className='input-search' type="date" min={minDate} max={maxDate} id="end"/>
+                    <input className='input-search' onKeyDown={(e) => e.preventDefault()} type="date" min={minDate} max={maxDate} id="end"/>
                     </div>
                 </div>
                 <button className='button6' onClick={handleSearch}>Search</button>
@@ -248,7 +250,6 @@ function ArchiveSearch()
                     );
                 })}
             </div>
-            <Link className='a3' to='/board'>Go Back</Link>
         </div>
     );
 }
