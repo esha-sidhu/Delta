@@ -227,7 +227,7 @@ function SleepTrackerSearch()
                 <div>
                 <button className='button3' onClick={handleSearch}>Search</button>
                 </div>
-                {invalidSearch}
+                <div className='invalid'>{invalidSearch}</div>
             </div>
             </div>
             <div>

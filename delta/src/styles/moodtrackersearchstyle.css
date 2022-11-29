@@ -121,3 +121,10 @@
     justify-content:center;
     align-items: baseline;
 }
+
+.invalid {
+    margin-left: 4%;
+    font-family: 'Patrick Hand';
+    font-size: 23px;
+    font-weight: 900;
+}
