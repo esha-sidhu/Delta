@@ -226,7 +226,7 @@ function WaterTrackerSearch()
                 <div>
                 <button className='button4' onClick={handleSearch}>Search</button>
                 </div>
-                {invalidSearch}
+                <div className='invalid'>{invalidSearch}</div>
             </div>
             </div>
             <div>

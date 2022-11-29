@@ -224,7 +224,7 @@ function MoodTrackerSearch()
                     </div>
                 </div>
                 <button className='button5' onClick={handleSearch}>Search</button>
-                {invalidSearch}
+                <div className='invalid'>{invalidSearch}</div>
             </div>
             </div>
             <div>

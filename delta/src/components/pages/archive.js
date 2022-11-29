@@ -226,7 +226,7 @@ function ArchiveSearch()
                     </div>
                 </div>
                 <button className='button6' onClick={handleSearch}>Search</button>
-                {invalidSearch}
+                <div className='invalid'>{invalidSearch}</div>
             </div>
             <div>
                 {todoEntries.map(({dateEntry, amountEntry}) => {
