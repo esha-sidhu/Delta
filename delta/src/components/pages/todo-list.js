@@ -3,6 +3,7 @@ import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc}
 import {database, author} from '../../firebase';
 import {onAuthStateChanged} from 'firebase/auth';
 import Navigation from '../shared/navbar';
+import '../../styles/todoliststyle.css'
 
 function ToDoList()
 {
@@ -243,45 +244,51 @@ function ToDoList()
     }
 
     return (
-        <div>
+        <div className='todo'>
             <Navigation />
-            <div>
+            
+            <div className='listTitle'>
+                To-Do List! 
+            </div>
+            <div className='affirmations'>
+                
+                You're doing amazing! 
                 <br></br>
-                <font size="6">
-                    To-Do List! 
-                </font>
-                <font size="3">
-                    <br></br><br></br>
-                    You're doing amazing! 
-                    <br></br>
-                    Keep trying your best today ʕ•ᴥ•ʔ
-                    <br></br> 
-                </font>
-                <font size="1">
-                    Only add up to 10 items to help with stress management.
-                    <br></br>
-                    To send your checked-off tasks to your completed archive, and remove them from your current list, click 'Update Archive' below.
-                    <br></br><br></br>
-                </font>
+                Keep trying your best today ʕ•ᴥ•ʔ
+                <br></br> 
+            </div>
+            <div className='instr'>
+                <br></br>
+                Only add up to 10 items to help with stress management.
+                <br></br>
+                To send your checked-off tasks to your completed archive, and remove them 
+                <br></br>
+                from your current list, click 'Update Archive' below.
+                <br></br>
+                If you want to remove an item entirely, press 'X'.
+                <br></br><br></br>
+            </div>
+            <div className='todoWrapper'>
                 <div id="newItem">
                     <label>Add a task here:</label>
-                    <input type="text" size="20" id="taskValue" placeholder="To-Do" name="taskValue"></input>
-                    <button onClick={handleTask}>Add</button>
+                    <input type="text" size="20" id="taskValue" placeholder="To-Do" name="taskValue" className='taskVal'></input>
+                    <button onClick={handleTask} className='addButton'>Add</button>
                 </div>
-            </div>
-            <ol>
-                {todoitems.map((val, i) => {
-                    return (
-                        <div key={val}>
-                            <input type="checkbox" onChange={() => handleCheck(val)} id={"check" + i} checked={Checked[i]}></input>
-                            {val} &ensp;
-                            <button type="button" onClick={() => handleDelete(val)}> X </button>
-                        </div>
-                    );
-                })}
                 <br></br>
-                <button type="button" onClick={updateArchive}>Update Archive</button>
-            </ol>
+                <ol className='actualList'>
+                    {todoitems.map((val, i) => {
+                        return (
+                            <div key={val}>
+                                <input type="checkbox" onChange={() => handleCheck(val)} id={"check" + i} checked={Checked[i]}></input>
+                                {val} &ensp;
+                                <button type="button" onClick={() => handleDelete(val)} className='buttons'> X </button>
+                            </div>
+                        );
+                    })}
+                    <br></br>
+                    <button type="button" onClick={updateArchive} className='buttonArch'>Update Archive</button>
+                </ol>
+            </div>
         </div>
     );
 

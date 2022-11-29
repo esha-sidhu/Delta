@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Nerko+One');
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.todo {
+    background-color: #916A53;
+    padding: 10px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+.listTitle {
+    color: #f5e5d5;
+    font-family: 'Nerko One';
+    font-size: 90px;
+    text-align: center;
+}
+
+.affirmations {
+    color: #f5e5d5;
+    font-family: 'Patrick Hand';
+    font-size: 30px;
+    text-align: center;
+}
+
+.instr {
+    color: #f5e5d5;
+    font-family: 'Patrick Hand';
+    font-size: 20px;
+    text-align: center;
+}
+
+.taskVal {
+    color: #6b4f32;
+}
+
+.addButton {
+    background-color: #C89D85;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border-color: #6b4f32;
+    line-height: 40px;
+    color: #f5e5d5;
+}
+
+.buttons {
+    background-color: #C89D85;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: #6b4f32;
+    line-height: 25px;
+    margin-left: 2%;
+    color: #f5e5d5;
+}
+
+.buttonArch {
+    background-color: #f8c6ab;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: #6b4f32;
+    line-height: 25px;
+    margin-left: 2%;
+    color: #6b4f32;
+}
+
+.todoWrapper {
+    color: #f5e5d5;
+    background-color: #774c35;
+    font-family: 'Patrick Hand';
+    font-size: 25px;
+    text-align: center;
+    width: 600px;
+    padding: 10px;
+    border: 3px solid #553726;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.actualList {
+    color: #f5e5d5;
+    background-color: #774c35;
+    font-family: 'Patrick Hand';
+    font-size: 25px;
+    text-align: left;
+}
