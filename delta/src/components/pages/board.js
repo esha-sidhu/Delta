@@ -24,7 +24,7 @@ function Board()
 
     if (performance.getEntriesByType("navigation")[0].type === "reload")
     {
-        window.location.assign("/");
+        window.location.assign("/login");
     }
 
     if (!temp)

@@ -8,6 +8,11 @@ import '../../styles/images.css';
 function SearchImages3() {
     const[image, setImage] = useState([]);
 
+    if (performance.getEntriesByType("navigation")[0].type === "reload")
+    {
+        window.location.assign("/login");
+    }
+
     function HandleClick() {
         const searchElement = document.getElementById('search').value;
         console.log(searchElement);
