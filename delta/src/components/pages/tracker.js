@@ -7,7 +7,7 @@ function Tracker()
 {
     if (performance.getEntriesByType("navigation")[0].type === "reload")
     {
-        window.location.assign("/login");
+        window.location.assign("/");
     }
 
     return (

@@ -23,8 +23,7 @@ function App()
     return (
         <BrowserRouter>
             <Routes>
-                <Route exact path = "/" element={<Landing />} />
-                <Route path = "/login" element={<LogIn />} />
+                <Route exact path = "/" element={<LogIn />} />
                 <Route path = "/board" element={<Board />} />
                 <Route path = "/archive" element={<ArchiveSearch />} />
                 <Route path = "/tracker" element={<Tracker />} />
@@ -45,13 +44,5 @@ function App()
     );
 }
 
-function Landing()
-{
-    return (
-        <div>
-            <Link className='a8' to="/login">Log In</Link>
-        </div>
-    );
-}
 
 export default App;

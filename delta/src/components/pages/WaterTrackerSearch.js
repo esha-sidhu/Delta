@@ -18,7 +18,7 @@ function WaterTrackerSearch()
         if (author.currentUser === null)
         {
             console.log("uid is null");
-            window.location.assign("/login");
+            window.location.assign("/");
         }
 
         const user = author.currentUser.uid;
@@ -210,17 +210,19 @@ function WaterTrackerSearch()
             <div className='title1'>
                 Your Water Intake
             </div>
+            <br/>
+            <Link className='a1' to='/watertracker'>Go Back</Link>
             <div>
                 <br/>
                 <div className='wrap-top3'>
                 <div className='box4'>
                     <div className='text'> Start Date : {' '}
-                    <input className='input-search' type="date" min={minDate} max={maxDate} id="start"/>
+                    <input className='input-search' onKeyDown={(e) => e.preventDefault()} type="date" min={minDate} max={maxDate} id="start"/>
                     </div>
                 </div>
                 <div className='box4'>
                     <div className='text'> End Date : {' '}
-                    <input className='input-search' type="date" min={minDate} max={maxDate} id="end"/>
+                    <input className='input-search' onKeyDown={(e) => e.preventDefault()} type="date" min={minDate} max={maxDate} id="end"/>
                     </div>
                 </div>
                 <div>
@@ -243,7 +245,6 @@ function WaterTrackerSearch()
                     );
                 })}
             </div>
-            <Link className='a1' to='/watertracker'>Go Back</Link>
         </div>
     );
 }

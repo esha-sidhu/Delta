@@ -72,7 +72,7 @@ class SleepTracker extends React.Component {
         const retrieveSleepData = async () => {
             if (author.currentUser === null)
             {
-                window.location.assign("/login");
+                window.location.assign("/");
             }
 
             let userAndDate = author.currentUser.uid + `${day_convert[week[0].getDay()]}, ${week[0].getDate()} ${month_convert[week[0].getMonth()]} ${week[0].getFullYear()}`;
@@ -278,30 +278,30 @@ class SleepTracker extends React.Component {
         <div className='wrap'>
             
         <div className='box'>
-        <div className='date'>{day_convert[week[6].getDay()]}, {week[6].getDate()} {month_convert[week[6].getMonth()]} {week[6].getFullYear()}</div>
-        <div className='hour'>{this.state.Seven} hours</div>
-        <input className='input' type="text" value={this.state.hours_seven} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeSeven}/>
+        <div className='date'>{day_convert[week[0].getDay()]}, {week[0].getDate()} {month_convert[week[0].getMonth()]} {week[0].getFullYear()}</div>
+        <div className='hour'>{this.state.One} hours</div>
+        <input className='input' type="text" value={this.state.hours_one} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeOne}/>
         <br/>
         <br/>
-        <button className='button' onClick={this.handleSubmitSeven}>Log</button>
+        <button className='button' onClick={this.handleSubmitOne}>Log</button>
         </div>
 
         <div className='box' style={{marginLeft: "2%", marginBottom: "5%"}}>
-        <div className='date'>{day_convert[week[5].getDay()]}, {week[5].getDate()} {month_convert[week[5].getMonth()]} {week[5].getFullYear()}</div>
-        <div className='hour'>{this.state.Six} hours</div>
-        <input className='input' type="text" value={this.state.hours_six} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeSix}/>
+        <div className='date'>{day_convert[week[1].getDay()]}, {week[1].getDate()} {month_convert[week[1].getMonth()]} {week[1].getFullYear()}</div>
+        <div className='hour'>{this.state.Two} hours</div>
+        <input className='input' type="text" value={this.state.hours_two} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeTwo}/>
         <br/>
         <br/>
-        <button className='button' onClick={this.handleSubmitSix}>Log</button>
+        <button className='button' onClick={this.handleSubmitTwo}>Log</button>
         </div>
 
         <div className='box'>
-        <div className='date'>{day_convert[week[4].getDay()]}, {week[4].getDate()} {month_convert[week[4].getMonth()]} {week[4].getFullYear()}</div>
-        <div className='hour'>{this.state.Five} hours</div>
-        <input className='input' type="text" value={this.state.hours_five} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeFive}/>
+        <div className='date'>{day_convert[week[2].getDay()]}, {week[2].getDate()} {month_convert[week[2].getMonth()]} {week[2].getFullYear()}</div>
+        <div className='hour'>{this.state.Three} hours</div>
+        <input className='input' type="text" value={this.state.hours_three} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeThree}/>
         <br/>
         <br/>
-        <button className='button' onClick={this.handleSubmitFive}>Log</button>
+        <button className='button' onClick={this.handleSubmitThree}>Log</button>
         </div>
 
         </div>
@@ -318,21 +318,21 @@ class SleepTracker extends React.Component {
         </div>
 
         <div className='box'>
-        <div className='date'>{day_convert[week[2].getDay()]}, {week[2].getDate()} {month_convert[week[2].getMonth()]} {week[2].getFullYear()}</div>
-        <div className='hour'>{this.state.Three} hours</div>
-        <input className='input' type="text" value={this.state.hours_three} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeThree}/>
+        <div className='date'>{day_convert[week[4].getDay()]}, {week[4].getDate()} {month_convert[week[4].getMonth()]} {week[4].getFullYear()}</div>
+        <div className='hour'>{this.state.Five} hours</div>
+        <input className='input' type="text" value={this.state.hours_five} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeFive}/>
         <br/>
         <br/>
-        <button className='button' onClick={this.handleSubmitThree}>Log</button>
+        <button className='button' onClick={this.handleSubmitFive}>Log</button>
         </div>
 
         <div className='box'>
-        <div className='date'>{day_convert[week[1].getDay()]}, {week[1].getDate()} {month_convert[week[1].getMonth()]} {week[1].getFullYear()}</div>
-        <div className='hour'>{this.state.Two} hours</div>
-        <input className='input' type="text" value={this.state.hours_two} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeTwo}/>
+        <div className='date'>{day_convert[week[5].getDay()]}, {week[5].getDate()} {month_convert[week[5].getMonth()]} {week[5].getFullYear()}</div>
+        <div className='hour'>{this.state.Six} hours</div>
+        <input className='input' type="text" value={this.state.hours_six} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeSix}/>
         <br/>
         <br/>
-        <button className='button' onClick={this.handleSubmitTwo}>Log</button>
+        <button className='button' onClick={this.handleSubmitSix}>Log</button>
         </div>
 
         </div>
@@ -341,12 +341,12 @@ class SleepTracker extends React.Component {
         <div className='wrap-two'>
 
         <div className='box'> 
-        <div className='date'>{day_convert[week[0].getDay()]}, {week[0].getDate()} {month_convert[week[0].getMonth()]} {week[0].getFullYear()}</div>
-        <div className='hour'>{this.state.One} hours</div>
-        <input className='input' type="text" value={this.state.hours_one} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeOne}/>
+        <div className='date'>{day_convert[week[6].getDay()]}, {week[6].getDate()} {month_convert[week[6].getMonth()]} {week[6].getFullYear()}</div>
+        <div className='hour'>{this.state.Seven} hours</div>
+        <input className='input' type="text" value={this.state.hours_seven} placeholder={'enter a whole number between 0 and 24'} size="35" onChange={this.handleChangeSeven}/>
         <br/>
         <br/>
-        <button className='button' onClick={this.handleSubmitOne}>Log</button>
+        <button className='button' onClick={this.handleSubmitSeven}>Log</button>
         </div>
 
         </div>
