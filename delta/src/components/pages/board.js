@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link, } from "react-router-dom";
 import ToDoList from "./todo-list";
-// import App from '../App';
 import Navigation from '../shared/navbar';
 import SearchImages from './images';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -20,6 +19,8 @@ function Board()
     const [imageBox4, setImageBox4] = useState("");
     const [authOfImage4, setAuthOfImage4] = useState("");
     const [temp, setTemp] = useState(false);
+    const [font, setFont] = useState("");
+    const [color, setBgColor] = useState("");
 
     if (performance.getEntriesByType("navigation")[0].type === "reload")
     {
@@ -39,6 +40,23 @@ function Board()
     }
 
     useEffect(() => {
+        const retrivePastSettingData = async () => {
+            if (author.currentUser === null)
+            {
+                console.log("uid is null");
+                return;
+            }
+            const user = author.currentUser.uid;
+            const settingsQ = query(collection(database, "settingsData"), where("authorID", "==", user));
+            const settingsQRes = await getDocs(settingsQ);
+            if (settingsQRes.docs.length !== 0)
+            {
+                const font_temp = settingsQRes.docs[0]._document.data.value.mapValue.fields.fontSet.stringValue;
+                setFont(font_temp)
+                const bgcolor_temp = settingsQRes.docs[0]._document.data.value.mapValue.fields.backgroundSet.stringValue;
+                setBgColor(bgcolor_temp)
+            }
+        }
         const retrievePastImageData = async () => {
             if (author.currentUser === null)
             {
@@ -71,6 +89,7 @@ function Board()
         };
 
         retrievePastImageData();
+        retrivePastSettingData();
     }, [temp]);
 
     function GoToSearchImages1() {
@@ -90,7 +109,7 @@ function Board()
     }
 
     return (
-        <div>
+        <div className='bg'>
             <Navigation /> 
             <div>
                 Welcome to your Bulletin Board!
