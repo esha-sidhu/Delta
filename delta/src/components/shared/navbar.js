@@ -13,14 +13,14 @@ function Navigation() {
     <nav className="navbar navbar-inverse navbar-fixed-top">
       <div className="container-fluid">
         <div className="navbar-header">
-          <a className="navbar-brand" href="/login">Delta</a>
+          <a className="navbar-brand" href="/">Delta</a>
         </div>
         <ul className="nav navbar-nav">
           <li><Link to="/settings">Settings</Link></li>
           <li><Link to="/board">Board</Link></li>
           <li><Link to="/tracker">Trackers</Link></li>
           <li><Link to="/journal">Journal</Link></li>
-          <li><Link to="/login">Log Out</Link></li>
+          <li><Link to="/">Log Out</Link></li>
         </ul>
       </div>
     </nav>

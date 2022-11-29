@@ -23,7 +23,7 @@ function App()
     return (
         <BrowserRouter>
             <Routes>
-                <Route exact path = "/login" element={<LogIn />} />
+                <Route exact path = "/" element={<LogIn />} />
                 <Route path = "/board" element={<Board />} />
                 <Route path = "/archive" element={<ArchiveSearch />} />
                 <Route path = "/tracker" element={<Tracker />} />
