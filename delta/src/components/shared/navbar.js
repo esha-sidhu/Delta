@@ -20,6 +20,7 @@ function Navigation() {
           <li><Link to="/board">Board</Link></li>
           <li><Link to="/tracker">Trackers</Link></li>
           <li><Link to="/journal">Journal</Link></li>
+          <li><Link to="/login">Log Out</Link></li>
         </ul>
       </div>
     </nav>
