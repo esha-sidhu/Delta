@@ -72,7 +72,7 @@ class SleepTracker extends React.Component {
         const retrieveSleepData = async () => {
             if (author.currentUser === null)
             {
-                window.location.assign("/");
+                window.location.assign("/login");
             }
 
             let userAndDate = author.currentUser.uid + `${day_convert[week[0].getDay()]}, ${week[0].getDate()} ${month_convert[week[0].getMonth()]} ${week[0].getFullYear()}`;

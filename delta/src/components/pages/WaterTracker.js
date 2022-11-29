@@ -81,7 +81,7 @@ function WaterEntry({dateInput})
         if (author.currentUser === null)
         {
             console.log("uid is null");
-            window.location.assign("/");
+            window.location.assign("/login");
         }
         const userAndDate = author.currentUser.uid + dateStr;
         const waterQ = query(collection(database, "waterData"), where("userDateSearch", "==", userAndDate));

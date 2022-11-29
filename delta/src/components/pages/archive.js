@@ -18,7 +18,7 @@ function ArchiveSearch()
         if (author.currentUser === null)
         {
             console.log("uid is null");
-            window.location.assign("/");
+            window.location.assign("/login");
         }
 
         const user = author.currentUser.uid;
