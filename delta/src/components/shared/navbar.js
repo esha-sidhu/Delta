@@ -13,7 +13,7 @@ function Navigation() {
     <nav className="navbar navbar-inverse navbar-fixed-top">
       <div className="container-fluid">
         <div className="navbar-header">
-          <a className="navbar-brand" href="/">Delta</a>
+          <a className="navbar-brand" href="/login">Delta</a>
         </div>
         <ul className="nav navbar-nav">
           <li><Link to="/settings">Settings</Link></li>
