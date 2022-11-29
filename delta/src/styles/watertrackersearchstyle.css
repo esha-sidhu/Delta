@@ -18,61 +18,69 @@
     letter-spacing: 4px;
 }
 
-.box1 {
+.box4 {
     text-align: center;
     margin-left: 2%;
-    width: 20vw;
-    height: 21vh;
+    width: 14vw;
+    height: 4vh;
     padding: 20px;
     text-align: center;
     background-color: #D9F3FF;
     border-radius: 10px;
 }
 
-.date {
+.text {
     font-family: 'Nerko One';
     font-size: 25px;
+    text-align: baseline;
 }
 
-.input {
+.input-search {
     height: 20px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.amount {
+.data {
+    font-family: 'Nerko One';
+    font-size: 27px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.amounts {
     font-family: 'Patrick Hand';
-    font-size: 20px;
-    line-height: 60px;
-}
-
-.wrap1 {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: -1%;
-    margin-top: -1%;
-    padding-bottom: 5%;
-}
-
-.wrap-two1 {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 0.4%;
-}
-
-.button1 {
+    font-size: 23px;
+    text-align: center;
+    font-weight: 900;
     background-color: #66BFFF;
-    font-size: 20px;
+    border-radius: 5px;
+}
+
+.data-box1 {
+    background-color: #D9F3FF;
+    width: 18vw;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-left: 40%;
+}
+
+.button4 {
+    background-color: #66BFFF;
+    font-size: 30px;
     font-family: 'Nerko One';
     border-radius: 10px;
     border-color: black;
     cursor: pointer;
     line-height: 25px;
+    margin-left: 40%;
 }
 
-.button1:hover {
+.button4:hover {
     background-color: #008AD8;
 }
 
-.button1:active {
+.button4:active {
     background-color: #008AD8;
     box-shadow: 0 3px black;
     transform: translateY(2px);
@@ -105,7 +113,9 @@
     transform: translateY(2px);
 }
 
-.wrap-top1 {
+.wrap-top3 {
     display: flex;
-    flex-direction:column;
+    flex-direction:row;
+    justify-content:center;
+    align-items: baseline;
 }

@@ -7,79 +7,87 @@
     height: 100vh;
 }
 
-.title1 {
+.title {
     font-family: 'Shadows Into Light Two';
     font-size: 50px;
     text-align: center;
     font-weight: bold;
     -webkit-text-stroke: 2.5px black;
-    background-color: #008AD8;
+    background-color: #6588CB;
     margin-top: -0.5%;
     letter-spacing: 4px;
 }
 
-.box1 {
+.box3 {
     text-align: center;
     margin-left: 2%;
-    width: 20vw;
-    height: 21vh;
+    width: 14vw;
+    height: 4vh;
     padding: 20px;
     text-align: center;
-    background-color: #D9F3FF;
+    background-color: #E3F0FF;
     border-radius: 10px;
 }
 
-.date {
+.text {
     font-family: 'Nerko One';
     font-size: 25px;
+    text-align: baseline;
 }
 
-.input {
+.input-search {
     height: 20px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.amount {
+.data {
+    font-family: 'Nerko One';
+    font-size: 27px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.hours {
     font-family: 'Patrick Hand';
-    font-size: 20px;
-    line-height: 60px;
+    font-size: 23px;
+    text-align: center;
+    font-weight: 900;
+    background-color: #9DBDFF;
+    border-radius: 5px;
 }
 
-.wrap1 {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: -1%;
-    margin-top: -1%;
-    padding-bottom: 5%;
+.data-box {
+    background-color: #E3F0FF;
+    width: 18vw;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-left: 40%;
 }
 
-.wrap-two1 {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 0.4%;
-}
-
-.button1 {
-    background-color: #66BFFF;
-    font-size: 20px;
+.button3 {
+    background-color: #9DBDFF;
+    font-size: 30px;
     font-family: 'Nerko One';
     border-radius: 10px;
     border-color: black;
     cursor: pointer;
     line-height: 25px;
+    margin-left: 40%;
 }
 
-.button1:hover {
-    background-color: #008AD8;
+.button3:hover {
+    background-color: #6588CB;
 }
 
-.button1:active {
-    background-color: #008AD8;
+.button3:active {
+    background-color: #6588CB;
     box-shadow: 0 3px black;
     transform: translateY(2px);
   }
 
-.a1 {
-    background-color: #66BFFF;
+.a {
+    background-color: #9DBDFF;
     color: black;
     font-size: 25px;
     font-family: 'Nerko One';
@@ -93,19 +101,21 @@
     margin-top: 0.5%;
 }
 
-.a1:hover {
-    background-color: #008AD8;
+.a:hover {
+    background-color: #6588CB;
     text-decoration: none;
     color: black;
 }
 
-.a1:active {
-    background-color: #008AD8;
+.a:active {
+    background-color: #6588CB;
     box-shadow: 0 3px black;
     transform: translateY(2px);
 }
 
-.wrap-top1 {
+.wrap-top3 {
     display: flex;
-    flex-direction:column;
+    flex-direction:row;
+    justify-content:center;
+    align-items: baseline;
 }

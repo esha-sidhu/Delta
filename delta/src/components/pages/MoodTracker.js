@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {Link} from "react-router-dom";
-import Navigation from './navbar';
+import Navigation from '../shared/navbar';
 import '../../styles/moodtrackerstyle.css'
 
 function MoodTracker()
 {
     return(
-        <div className='page2'>
+        <div className='page'>
             
             <Navigation />
 
@@ -122,13 +122,13 @@ function MoodEntry({dateInput})
 
     return(
         <div>
-            <div className='date2'>
+            <div className='date'>
                 {dateStr}
             </div>
             <div className='mood'>
                 {amount}
             </div>
-            <div className='input2'>
+            <div className='input'>
                 <select id={entryName}>
                     <option value="-">-</option>
                     <option value="Excited">Excited</option>

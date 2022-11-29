@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, } from "react-router-dom";
 import ToDoList from "./todo-list";
 // import App from '../App';
-import Navigation from './navbar';
+import Navigation from '../shared/navbar';
 import SearchImages from './images';
 import { onAuthStateChanged } from 'firebase/auth';
 import {collection, getDocs, query, where} from 'firebase/firestore';

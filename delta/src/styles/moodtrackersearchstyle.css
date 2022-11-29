@@ -12,71 +12,77 @@
     font-size: 50px;
     text-align: center;
     font-weight: bold;
-    -webkit-text-stroke: 2.5px 	#F5E0EC;
+    -webkit-text-stroke: 2.5px #F5E0EC;
     background-color: #E760A4;
     margin-top: -0.5%;
-    color: #F5E0EC;
     letter-spacing: 4px;
+    color: #F5E0EC;
 }
 
-.box2 {
+.box5 {
     text-align: center;
     margin-left: 2%;
-    width: 20vw;
-    height: 21vh;
+    width: 14vw;
+    height: 4vh;
     padding: 20px;
     text-align: center;
     background-color: #FFE4F8;
     border-radius: 10px;
 }
 
-.date {
+.text {
     font-family: 'Nerko One';
     font-size: 25px;
+    text-align: baseline;
 }
 
-.input {
+.input-search {
     height: 20px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.mood {
+.data {
+    font-family: 'Nerko One';
+    font-size: 27px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.moods {
     font-family: 'Patrick Hand';
-    font-size: 25px;
-    line-height: 60px;
-    font-weight: 500;
-}
-
-.wrap2 {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: -1%;
-    margin-top: -1%;
-    padding-bottom: 5%;
-}
-
-.wrap-two2 {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 0.4%;
-}
-
-.button2 {
+    font-size: 23px;
+    text-align: center;
+    font-weight: 900;
     background-color: #F8B3D1;
-    font-size: 20px;
+    border-radius: 5px;
+}
+
+.data-box2 {
+    background-color: #F5E0EC;
+    width: 18vw;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-left: 40%;
+}
+
+.button5 {
+    background-color: #F8B3D1;
+    font-size: 30px;
     font-family: 'Nerko One';
     border-radius: 10px;
     border-color: #F5E0EC;
-    border-style: solid;
     cursor: pointer;
     line-height: 25px;
+    margin-left: 2%;
     color: white;
 }
 
-.button2:hover {
+.button5:hover {
     background-color: #E760A4;
 }
 
-.button2:active {
+.button5:active {
     background-color: #E760A4;
     box-shadow: 0 3px black;
     transform: translateY(2px);
@@ -109,7 +115,9 @@
     transform: translateY(2px);
 }
 
-.wrap-top2 {
+.wrap-top3 {
     display: flex;
-    flex-direction:column;
+    flex-direction:row;
+    justify-content:center;
+    align-items: baseline;
 }

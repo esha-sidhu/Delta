@@ -2,7 +2,7 @@ import { addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc
 import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import { author, database } from '../../firebase';
-import Navigation from './navbar';
+import Navigation from '../shared/navbar';
 import '../../styles/journal-style.css'
 
 function Journal()
@@ -135,26 +135,24 @@ function SaveText3()
 }
 
     return (
-        <div>
+        <div className='page'>
             <Navigation />
-            <div>
-                Your journal!
+            <div className='title3'>
+            {'\u2744'} Journal Time {'\u2744'}
             </div>
             <div>
                 <br/>
+                <div className='entry-type'>What's on your mind...</div>
                 <textarea id="Text1" cols="40" rows="5" className='input-one' defaultValue={saveText1}></textarea>
+                <button className='save-button' onClick={() => SaveText1()}>Save</button>
                 <br/>
-                <button onClick={() => SaveText1()}>save</button>
-                <br/>
+                <div className='entry-type'>How are you feeling...</div>
                 <textarea id="Text2" cols="40" rows="5" className='input-two' defaultValue={saveText2}></textarea>
+                <button className='save-button' onClick={() => SaveText2()}>Save</button>
                 <br/>
-                <button onClick={() => SaveText2()}>save</button>
-                <br/>
+                <div className='entry-type'>Your quotes collection...</div>
                 <textarea id="Text3" cols="40" rows="5" className='input-three' defaultValue={saveText3}></textarea>
-                <br/>
-                <button onClick={() => SaveText3()}>save</button>
-                <br/>
-                <Link to="/board">Go back to your bulletin board</Link>
+                <button className='save-button' onClick={() => SaveText3()}>Save</button>
             </div>
         </div>
     );

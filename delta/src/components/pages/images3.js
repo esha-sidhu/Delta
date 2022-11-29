@@ -3,7 +3,7 @@ import { createApi, search } from 'unsplash-js';
 import React, { useState, useEffect } from "react";
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../../firebase';
-import './images.css';
+import '../../styles/images.css';
 
 function SearchImages3() {
     const[image, setImage] = useState([]);

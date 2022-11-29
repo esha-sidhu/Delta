@@ -1,0 +1,114 @@
+.title5 {
+    
+    background-color: #C6A788;
+    color: black;
+    font-family: 'Shadows Into Light Two';
+    font-size: 50px;
+    text-align: center;
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 3px;
+    margin-top: -0.5%;
+}
+
+.a4 {
+    background-color: #9DBDFF;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 45%;
+    padding: 8px;
+    margin-top: 0.5%;
+}
+
+.a4:hover {
+    background-color: #6588CB;
+    text-decoration: none;
+    color: white;
+}
+
+.a4:active {
+    background-color: #6588CB;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+.a5 {
+    background-color: #66BFFF;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 45%;
+    padding: 8px;
+}
+
+.a5:hover {
+    background-color: #008AD8;
+    text-decoration: none;
+    color: white;
+}
+
+.a5:active {
+    background-color: #008AD8;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+.a6 {
+    background-color: #F8B3D1;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 45%;
+    padding: 8px;
+}
+
+.a6:hover {
+    background-color: #E760A4;
+    text-decoration: none;
+    color: white;
+}
+
+.a6:active {
+    background-color: #E760A4;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+.a7 {
+    background-color: #C89D85;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 75%;
+    margin-right: 4%;
+    padding: 8px;
+    margin-top: 0.5%;
+}
+
+.a7:hover {
+    background-color: #916A53;
+    text-decoration: none;
+    color: white;
+}
+
+.a7:active {
+    background-color: #916A53;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}

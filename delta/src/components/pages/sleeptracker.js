@@ -3,7 +3,7 @@ import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc}
 import {database, author} from '../../firebase';
 import {Link} from "react-router-dom";
 import '../../styles/sleeptrackerstyle.css'
-import Navigation from './navbar'
+import Navigation from '../shared/navbar'
 
 const week = [new Date()]
 week[0].setHours(0, 0, 0, 0);

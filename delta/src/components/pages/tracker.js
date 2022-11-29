@@ -1,22 +1,32 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import Navigation from './navbar';
+import Navigation from '../shared/navbar';
+import '../../styles/trackerstyle.css'
 
 function Tracker()
 {
     return (
         <div>
             <Navigation />
-            <div>
+            <div className='title5'>
                 Your trackers!
             </div>
-            <div>
-                <Link to ="/sleeptracker">Go to Sleep Tracker</Link>
-                <Link to="/WaterTracker">Go to Water Tracker</Link>
-                <Link to="/MoodTracker">Go to Mood Tracker</Link>
-            </div>
-            <div>
-                <Link to="/board">Go back to your bulletin board</Link>
+            <br/>
+            <br/>
+            <div >
+                <Link className='a4' to ="/sleeptracker">Go to Sleep Tracker</Link>
+                <br/>
+                <br/>
+                <br/>
+                <Link className='a5' to="/WaterTracker">Go to Water Tracker</Link>
+                <br/>
+                <br/>
+                <br/>
+                <Link className='a6' to="/MoodTracker">Go to Mood Tracker</Link>
+                <br/>
+                <br/>
+                <br/>
+                <Link className='a7' to="/board">Go back</Link>
             </div>
         </div>
     );

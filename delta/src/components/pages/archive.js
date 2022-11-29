@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {collection, getDocs, query, where, orderBy} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import {convertDateObjectToStr} from './todo-list';
+import '../../styles/todoarchive.css'
+import {Link} from 'react-router-dom'
 
 function ArchiveSearch()
 {
@@ -207,33 +209,33 @@ function ArchiveSearch()
     }
 
     return(
-        <div>
-            <h1>
+        <div className='page'>
+            <div className='title4'>
                 Archived Tasks
-            </h1>
-            <h2>
-                Search through past completed todo list tasks
-            </h2>
-            <div>
-                <div>
-                    Start Date:
-                    <input type="date" min={minDate} max={maxDate} id="start"/>
+            </div>
+            <br/>
+            <div className='wrap-top3'>
+                <div className='box6'>
+                    <div className='text'>  Start Date : {' '}
+                    <input className='input-search' type="date" min={minDate} max={maxDate} id="start"/>
+                    </div>
                 </div>
-                <div>
-                    End Date:
-                    <input type="date" min={minDate} max={maxDate} id="end"/>
+                <div className='box6'>
+                    <div className='text'> End Date : {' '} 
+                    <input className='input-search' type="date" min={minDate} max={maxDate} id="end"/>
+                    </div>
                 </div>
-                <button onClick={handleSearch}>Search</button>
+                <button className='button6' onClick={handleSearch}>Search</button>
                 {invalidSearch}
             </div>
             <div>
                 {todoEntries.map(({dateEntry, amountEntry}) => {
                     return (
-                    <div key={dateEntry}>
-                        <div>
+                    <div className='data-box3' key={dateEntry}>
+                        <div className='data'>
                             {dateEntry}
                         </div>
-                        <div>
+                        <div className='tasks'>
                             {amountEntry.map((item, i) => {
                                 return (
                                     <div key={item.stringValue + i}>
@@ -246,6 +248,7 @@ function ArchiveSearch()
                     );
                 })}
             </div>
+            <Link className='a3' to='/board'>Go Back</Link>
         </div>
     );
 }
