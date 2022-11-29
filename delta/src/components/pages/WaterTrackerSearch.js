@@ -124,6 +124,19 @@ function WaterTrackerSearch()
                     endDate = new Date(endDate);
                 }
             }
+            else
+            {
+                if (start === "T00:00:00")
+                {
+                    startDate = new Date();
+                    startDate.setHours(0, 0, 0, 0);
+                }
+                if (end === "T00:00:00")
+                {
+                    endDate = new Date();
+                    endDate.setHours(0, 0, 0, 0);
+                }
+            }
         }
 
         console.log(startDate);

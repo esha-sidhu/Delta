@@ -1,6 +1,8 @@
 // import Unsplash, { toJson } from 'unsplash-js';
 import { createApi, search } from 'unsplash-js';
 import React, { useState, useEffect } from "react";
+import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
+import {database, author} from '../../firebase';
 import '../../styles/images.css';
 
 function SearchImages4() {
@@ -24,13 +26,53 @@ function SearchImages4() {
                 if (imageObj.response.results.length === i) {
                     break;
                 }
-                temp.push(imageObj.response.results[i].urls.small);
+                const imageAndAuthor = {
+                  image: imageObj.response.results[i].urls.small,
+                  authorName: imageObj.response.results[i].user.name
+                }
+                temp.push(imageAndAuthor);
             }
             setImage(temp);
           });
     }
 
-    function BackToDashboard() {
+    async function saveImageData(imageToSave, authorToSave)
+    {
+      const user = author.currentUser.uid;
+      const imageQ = query(collection(database, "imageData"), where("authorID", "==", user));
+      const imageQRes = await getDocs(imageQ);
+      if (imageQRes.docs.length !== 0)
+      {
+        const imageID = imageQRes.docs[0].id;
+        const imageToUpdate = doc(getFirestore(), "imageData", imageID);
+        await updateDoc(imageToUpdate, {box4: imageToSave, author4: authorToSave});
+      }
+      else
+      {
+        await addDoc (collection(database, "imageData"), {
+          authorName: author.currentUser.displayName,
+          authorID: author.currentUser.uid,
+          box1: "",
+          author1: "",
+          box2: "",
+          author2: "",
+          box3: "",
+          author3: "",
+          box4: imageToSave,
+          author4: authorToSave
+        }
+        );
+      }
+    }
+
+    async function BackToDashboard(i) {
+      const imageSrc = document.getElementById("imageInsideBox" + i).src;
+      const authName = image[i].authorName;
+      if (authName === null)
+      {
+        authName = "Anonymous";
+      }
+      await saveImageData(imageSrc, authName);
         window.location.assign('/board');
     }
 
@@ -55,9 +97,14 @@ function SearchImages4() {
             type="text"
         />
         <button type="button" onClick={HandleClick}>Search</button>
-        {image.map((val) => {
+        {image.map((val, i) => {
             return(
-                <button className='imageBox' id='boxed-image' onClick={BackToDashboard}><img src={val}></img></button>
+              <div>
+                <button className='imageBox' id='boxed-image' onClick={() => BackToDashboard(i)}>
+                  <img id={"imageInsideBox" + i} src={val.image}></img>
+                </button>
+                <small>Author: {val.authorName}</small>
+              </div>
             );
         })}
     </div>

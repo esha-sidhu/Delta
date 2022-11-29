@@ -110,6 +110,7 @@ function SleepTrackerSearch()
             const user = author.currentUser.uid;
             const sleepQ = query(collection(database, "sleepData"), where("authorID", "==", user), orderBy("date"));
             const sleepQRes = await getDocs(sleepQ);
+            console.log(sleepQRes);
             const len = sleepQRes.docs.length;
             if (len > 0)
             {
@@ -122,6 +123,19 @@ function SleepTrackerSearch()
                 {
                     endDate = sleepQRes.docs[len-1]._document.data.value.mapValue.fields.date.timestampValue;
                     endDate = new Date(endDate);
+                }
+            }
+            else
+            {
+                if (start === "T00:00:00")
+                {
+                    startDate = new Date();
+                    startDate.setHours(0, 0, 0, 0);
+                }
+                if (end === "T00:00:00")
+                {
+                    endDate = new Date();
+                    endDate.setHours(0, 0, 0, 0);
                 }
             }
         }
