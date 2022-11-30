@@ -109,7 +109,7 @@ function Board()
     }
 
     return (
-        <div className={color} style={{height:'100vh'}}>
+        <div className={color} style={{height:'130vh'}}>
             <Navigation /> 
             <Link to='/archive' className='archive'>Go to archive</Link>
             <div className='wrapt'>
