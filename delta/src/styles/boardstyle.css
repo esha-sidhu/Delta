@@ -1,0 +1,105 @@
+.imageBox {
+    display: inline-block;
+    height: 25vh;
+    width: 20vw;
+    padding: 10;
+}
+
+.plus {
+    background-color: #f8c6ab;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border: 2px solid #daa183;
+    line-height: 25px;
+    color: #6b4f32;
+}
+
+.plus:hover {
+    background-color: #916A53;
+    text-decoration: none;
+    color: #f5e5d5;
+}
+
+.plus:active {
+    background-color: #916A53;
+    box-shadow: 0 3px #916A53;
+    transform: translateY(2px);
+}
+
+.archive {
+    background-color: #f8c6ab;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border: 2px solid #daa183;
+    line-height: 25px;
+    margin-left: 87%;
+    color: #6b4f32;
+}
+
+.archive:hover {
+    background-color: #916A53;
+    text-decoration: none;
+    color: #f5e5d5;
+}
+
+.archive:active {
+    background-color: #916A53;
+    box-shadow: 0 3px #916A53;
+    transform: translateY(2px);
+}
+
+#boxed-image img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.leftbox {
+    float:left; 
+    width:25%;
+    height:280px;
+    align-items: center;
+    text-align: center;
+    margin-top: 7%;
+}
+.rightbox{
+    float:right;
+    margin-bottom: -30%;
+    width:25%;
+    height:280px;
+    text-align: center;
+    margin-top: 7%;
+}
+
+.wrapt {
+    display: flex;
+    flex-direction: row;
+}
+
+#add-image1 {
+    text-align: left;
+    margin-right: 65%;
+}
+
+#add-image2 {
+    text-align: left;
+    margin-right: 65%;
+}
+
+#add-image3 {
+    text-align: left;
+    margin-right: 65%;
+}
+
+#add-image4 {
+    text-align: left;
+    margin-right: 65%;
+}
+
+.author-name {
+    text-align: left;
+    font-size: smaller;
+    margin-left: 15%;
+}
