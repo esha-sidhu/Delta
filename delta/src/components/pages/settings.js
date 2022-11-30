@@ -61,18 +61,18 @@ function Settings()
     return (
         <div className='page'>
             <Navigation />
-            <div className='title5'>
+            <div className='title6'>
                 Settings
             </div>
             <br/>
             <br/>
             <div>
                 <div className='wrap-style-buttons'>
-                <button className='font-button' onClick={() => setfont('font1')}>Font1<br/><br/><div id='font1' >Sample: Make that change in your life!</div></button>
-                <button className='font-button' onClick={() => setfont('font2')}>Font2<br/><br/><div id='font2' >Sample: Make that change in your life!</div></button>
-                <button className='font-button' onClick={() => setfont('font3')}>Font3<br/><br/><div id='font3' >Sample: Make that change in your life!</div></button>
-                <button className='font-button' onClick={() => setfont('font4')}>Font3<br/><br/><div id='font4' >Sample: Make that change in your life!</div></button>
-                <button className='font-button' onClick={() => setfont('font5')}>Font3<br/><br/><div id='font5' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font1')}>Font 1<br/><br/><div id='font1' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font2')}>Font 2<br/><br/><div id='font2' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font3')}>Font 3<br/><br/><div id='font3' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font4')}>Font 4<br/><br/><div id='font4' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font5')}>Font 5<br/><br/><div id='font5' >Sample: Make that change in your life!</div></button>
                 </div>
                 <br/>
                 <br/>
@@ -86,7 +86,7 @@ function Settings()
                 <br/>
                 <br/>
                 <br/>
-                <Link className='a9' to="/board">Go back to your bulletin board</Link>
+                <Link className='a9' to="/board">Go back</Link>
             </div>
         </div>
     );
