@@ -80,13 +80,11 @@ function WaterEntry({dateInput})
         const retrieveWaterData = async () => {
         if (author.currentUser === null)
         {
-            console.log("uid is null");
             window.location.assign("/");
         }
         const userAndDate = author.currentUser.uid + dateStr;
         const waterQ = query(collection(database, "waterData"), where("userDateSearch", "==", userAndDate));
         const waterQRes = await getDocs(waterQ);
-        console.log(waterQRes);
         if (waterQRes.docs.length !== 0)
         {
             setAmount(waterQRes.docs[0]._document.data.value.mapValue.fields.value.integerValue);
@@ -103,15 +101,12 @@ function WaterEntry({dateInput})
     function handleEntry()
     {
         let input = document.getElementById(entryName);
-        console.log(input);
         change = parseInt(input.value);
         if (isNaN(change) || isNaN(input.value) || input.value.indexOf(".") !== -1 || change <= 0)
         {
-            console.log("invalid input");
         }
         else
         {
-            console.log(change);
             setAmount((change), saveWaterData(change));
         }
     }

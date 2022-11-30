@@ -16,7 +16,6 @@ function Journal()
         const retrievePastJournalData = async () => {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 window.location.assign("/");
             }
             const user = author.currentUser.uid;

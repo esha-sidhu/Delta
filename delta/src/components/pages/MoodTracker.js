@@ -68,13 +68,11 @@ function MoodEntry({dateInput})
         const retrieveMoodData = async () => {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 window.location.assign("/");
             }
             const userAndDate = author.currentUser.uid + dateStr;
             const moodQ = query(collection(database, "moodData"), where("userDateSearch", "==", userAndDate));
             const moodQRes = await getDocs(moodQ);
-            console.log(moodQRes);
             if (moodQRes.docs.length !== 0)
             {
                 setAmount(moodQRes.docs[0]._document.data.value.mapValue.fields.value.stringValue);
@@ -91,7 +89,6 @@ function MoodEntry({dateInput})
     function handleEntry()
     {
         let input = document.getElementById(entryName);
-        console.log(input.value);
         setAmount(input.value, saveMoodData(input.value));
     }
 

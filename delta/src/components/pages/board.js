@@ -32,7 +32,6 @@ function Board()
         onAuthStateChanged(author, () => {
             if (author.currentUser)
             {
-                console.log("user found");
                 setTemp(true);
             }
         }
@@ -43,7 +42,6 @@ function Board()
         const retrivePastSettingData = async () => {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 return;
             }
             const user = author.currentUser.uid;
@@ -60,7 +58,6 @@ function Board()
         const retrievePastImageData = async () => {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 return;
             }
             const user = author.currentUser.uid;
