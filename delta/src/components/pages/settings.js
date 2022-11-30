@@ -21,7 +21,7 @@ async function setfont(font)
           authorName: author.currentUser.displayName,
           authorID: author.currentUser.uid,
           fontSet: font,
-          backgroundSet: ""
+          backgroundSet: "bgcolor1"
         }
         );
       }
@@ -43,7 +43,7 @@ async function setbgcolor(color)
         await addDoc (collection(database, "settingsData"), {
           authorName: author.currentUser.displayName,
           authorID: author.currentUser.uid,
-          fontSet: "",
+          fontSet: "font1",
           backgroundSet: color
         }
         );
