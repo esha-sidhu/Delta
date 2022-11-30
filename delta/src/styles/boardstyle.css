@@ -23,7 +23,7 @@
 
 .plus:active {
     background-color: #916A53;
-    box-shadow: 0 3px #916A53;
+    box-shadow: 0 1px #916A53;
     transform: translateY(2px);
 }
 
