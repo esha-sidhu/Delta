@@ -6,7 +6,6 @@ import SearchImages from './images';
 import { onAuthStateChanged } from 'firebase/auth';
 import {collection, getDocs, query, where} from 'firebase/firestore';
 import {database, author} from '../../firebase';
-// import '../../styles/images.css';
 import '../../styles/boardstyle.css';
 
 function Board()
@@ -110,7 +109,7 @@ function Board()
     }
 
     return (
-        <div className='bg'>
+        <div className={color} style={{height:'100vh'}}>
             <Navigation /> 
             <Link to='/archive' className='archive'>Go to archive</Link>
             <div className='wrapt'>
