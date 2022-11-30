@@ -100,6 +100,8 @@ function SearchImages4() {
             />
             <button type="button" onClick={HandleClick} className='buttonSearch'>Search</button>
             <br></br>
+            Images from Unsplash
+            <br></br>
             <Link className='imageLink' to="/board">Go back</Link>
             {image.map((val, i) => {
                 return(
