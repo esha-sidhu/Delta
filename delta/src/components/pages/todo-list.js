@@ -4,6 +4,7 @@ import {database, author} from '../../firebase';
 import {onAuthStateChanged} from 'firebase/auth';
 import Navigation from '../shared/navbar';
 import '../../styles/todoliststyle.css'
+import '../../styles/boardstyle.css';
 
 function ToDoList()
 {
@@ -267,14 +268,14 @@ function ToDoList()
             <div className='listTitle'>
                 To-Do List! 
             </div>
-            <div className='affirmations'>
+            <div id={font} className='affirmations'>
                 
                 You're doing amazing! 
                 <br></br>
                 Keep trying your best today ʕ•ᴥ•ʔ
                 <br></br> 
             </div>
-            <div className='instr'>
+            <div id={font} className='instr'>
                 <br></br>
                 Only add up to 10 items to help with stress management.
                 <br></br>
@@ -285,19 +286,19 @@ function ToDoList()
                 If you want to remove an item entirely, press 'X'.
                 <br></br><br></br>
             </div>
-            <div className='todoWrapper'>
+            <div id={font} className='todoWrapper'>
                 <div id="newItem">
                     <label>Add a task here:</label>
-                    <input type="text" size="20" id="taskValue" placeholder="To-Do" name="taskValue" className='taskVal'></input>
+                    {' '}<input type="text" size="20" id="taskValue" placeholder="To-Do" name="taskValue" className='taskVal'></input>
                     <button onClick={handleTask} className='addButton'>Add</button>
                 </div>
                 <br></br>
                 <ol className='actualList'>
                     {todoitems.map((val, i) => {
                         return (
-                            <div key={val}>
+                            <div id={font} key={val}>
                                 <input type="checkbox" onChange={() => handleCheck(val)} id={"check" + i} checked={Checked[i]}></input>
-                                {val} &ensp;
+                                {' '}{val} &ensp;
                                 <button type="button" onClick={() => handleDelete(val)} className='buttons'> X </button>
                             </div>
                         );
