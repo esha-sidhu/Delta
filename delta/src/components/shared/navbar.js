@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import '../../styles/nav.css'
 
 function Navigation() {
   return (
-    <div>
+    <div className="navStyle">
       <meta charSet="utf-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
@@ -12,10 +13,8 @@ function Navigation() {
     
     <nav className="navbar navbar-inverse navbar-fixed-top">
       <div className="container-fluid">
-        <div className="navbar-header">
-          <a className="navbar-brand" href="/">Delta</a>
-        </div>
         <ul className="nav navbar-nav">
+          <li><Link to="/">Delta</Link></li>
           <li><Link to="/settings">Settings</Link></li>
           <li><Link to="/board">Board</Link></li>
           <li><Link to="/tracker">Trackers</Link></li>
