@@ -12,3 +12,41 @@
     height: 100%;
     width: 100%;
 }
+
+.imageWrapper {
+    background-color: #f7ffba;
+    height: 630vh;
+    text-align: center;
+}
+
+.imageTitle {
+    font-size: 40px;
+    font-family: 'Nerko One';
+    border-radius: 6px;
+    color: #6b4f32;
+    text-decoration: underline
+}
+
+.buttonSearch {
+    background-color: #C89D85;
+    font-size: 20px;
+    font-family: 'Nerko One';
+    border-color: #6b4f32;
+    line-height: 22px;
+    border-radius: 6px;
+    color: #6b4f32;
+}
+
+.inputText {
+    font-size: 18px;
+    font-family: 'Patrick Hand';
+    border-color: #6b4f32;
+    border-radius: 6px;
+    color: #6b4f32;
+}
+
+.author {
+    font-size: 18px;
+    font-family: 'Nerko One';
+    color: #6b4f32;
+}
