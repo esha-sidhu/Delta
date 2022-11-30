@@ -17,7 +17,6 @@ function SleepTrackerSearch()
         const retrievePastSleepData = async () => {
         if (author.currentUser === null)
         {
-            console.log("uid is null");
             window.location.assign("/");
         }
 
@@ -74,7 +73,6 @@ function SleepTrackerSearch()
         }
 
         setSleepEntries(tempSleepEntries);
-        console.log(tempSleepEntries);
     };
 
     retrievePastSleepData();
@@ -84,9 +82,6 @@ function SleepTrackerSearch()
     {
         let start = document.getElementById("start").value + "T00:00:00";
         let end = document.getElementById("end").value + "T00:00:00";
-
-        console.log(start);
-        console.log(end);
 
         let startDate;
         let endDate;
@@ -104,7 +99,6 @@ function SleepTrackerSearch()
         {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 window.location.assign("/");
             }
             const user = author.currentUser.uid;
@@ -140,9 +134,6 @@ function SleepTrackerSearch()
             }
         }
 
-        console.log(startDate);
-        console.log(endDate);
-
         if (startDate > endDate)
         {
             setInvalidSearch("Invalid Range");
@@ -155,7 +146,6 @@ function SleepTrackerSearch()
 
         if (author.currentUser === null)
         {
-            console.log("uid is null");
             window.location.assign("/");
         }
         const user = author.currentUser.uid;
@@ -203,7 +193,6 @@ function SleepTrackerSearch()
         }
 
         setSleepEntries(tempSleepEntries);
-        console.log(tempSleepEntries);
     }
 
     return(

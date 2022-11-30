@@ -30,7 +30,6 @@ function ToDoList()
         onAuthStateChanged(author, () => {
             if (author.currentUser)
             {
-                console.log("user found");
                 setTemp(true);
             }
         }
@@ -41,7 +40,6 @@ function ToDoList()
         const retrivePastSettingData = async () => {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 return;
             }
             const user = author.currentUser.uid;
@@ -56,21 +54,17 @@ function ToDoList()
         const retrievePastTaskData = async () => {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 return;
             }
             const user = author.currentUser.uid;
             const taskQ = query(collection(database, "taskData"), where("authorID", "==", user));
             const taskQRes = await getDocs(taskQ);
-            console.log(taskQRes);
             if (taskQRes.docs.length !== 0)
             {
                 let tempTaskEntries = [];
                 let tempChecked = [];
                 let pastTaskEntries = taskQRes.docs[0]._document.data.value.mapValue.fields.value.arrayValue;
                 let pastChecked = taskQRes.docs[0]._document.data.value.mapValue.fields.checked.arrayValue;
-                console.log(pastChecked);
-                console.log(Object.keys(pastChecked).length);
                 if (Object.keys(pastTaskEntries).length === 0 || Object.keys(pastChecked).length === 0)
                 {
                     return;
@@ -87,8 +81,6 @@ function ToDoList()
                 {
                     tempChecked.push(pastChecked[i].booleanValue)
                 }
-                console.log("tempChecked");
-                console.log(tempChecked);
                 setChecked(tempChecked);
                 setToDoItems(tempTaskEntries);
             }
@@ -136,9 +128,6 @@ function ToDoList()
             setChecked(Checked);
             setToDoItems(todoitems, saveTaskData(todoitems, Checked));
             setNumOfTasks(numOfTasks + 1);
-
-            console.log(numOfTasks);
-            console.log(todoitems);
         }
         document.getElementById("taskValue").value = ''; // clears input box
     }
@@ -146,14 +135,12 @@ function ToDoList()
     function handleCheck(val)
     {
         // TODO: can update to do strikethrough/other styling here later
-        console.log("checked");
 
         let tempChecked = [];
         const len = Checked.length;
         console.log("length: " + len);
         for (let i = 0; i < len; i++)
         {
-            console.log(document.getElementById("check" + i).checked);
             tempChecked.push(document.getElementById("check" + i).checked)
         }
         setChecked(tempChecked);
@@ -226,7 +213,6 @@ function ToDoList()
         let tempChecked = [];
         var checkboxes = document.querySelectorAll("input[type=checkbox]");
         var newNumOfTasks = 0;
-        console.log(numOfTasks);
 
         if (todoitems.length === 0 || Checked.length === 0 || checkboxes.length === 0)
         {
@@ -255,10 +241,6 @@ function ToDoList()
         setChecked(tempChecked);
         setToDoItems(tempList, saveTaskData(tempList, tempChecked));
         setNumOfTasks(newNumOfTasks);
-
-        console.log(archivedTasks);
-        console.log(tempArchivedTasks);
-        console.log(numOfTasks);
     }
 
     return (
