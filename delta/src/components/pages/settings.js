@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Navigation from '../shared/navbar';
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../../firebase';
+import '../../styles/settings.css'
 
 async function setfont(font)
 {
@@ -21,7 +22,7 @@ async function setfont(font)
           authorName: author.currentUser.displayName,
           authorID: author.currentUser.uid,
           fontSet: font,
-          backgroundSet: "bgcolor1"
+          backgroundSet: ""
         }
         );
       }
@@ -43,7 +44,7 @@ async function setbgcolor(color)
         await addDoc (collection(database, "settingsData"), {
           authorName: author.currentUser.displayName,
           authorID: author.currentUser.uid,
-          fontSet: "font1",
+          fontSet: "",
           backgroundSet: color
         }
         );
@@ -58,19 +59,34 @@ function Settings()
     }
 
     return (
-        <div>
+        <div className='page'>
             <Navigation />
-            <div>
+            <div className='title5'>
                 Settings
             </div>
+            <br/>
+            <br/>
             <div>
-                <button onClick={() => setfont('font1')}>font1</button>
-                <button onClick={() => setfont('font2')}>font2</button>
-                <button onClick={() => setfont('font3')}>font3</button>
-                <button onClick={() => setbgcolor('bgcolor1')}>bgcolor1</button>
-                <button onClick={() => setbgcolor('bgcolor2')}>bgcolour2</button>
-                <button onClick={() => setbgcolor('bgcolor3')}>bgcolour3</button>
-                <Link to="/board">Go back to your bulletin board</Link>
+                <div className='wrap-style-buttons'>
+                <button className='font-button' onClick={() => setfont('font1')}>Font1<br/><br/><div id='font1' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font2')}>Font2<br/><br/><div id='font2' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font3')}>Font3<br/><br/><div id='font3' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font4')}>Font3<br/><br/><div id='font4' >Sample: Make that change in your life!</div></button>
+                <button className='font-button' onClick={() => setfont('font5')}>Font3<br/><br/><div id='font5' >Sample: Make that change in your life!</div></button>
+                </div>
+                <br/>
+                <br/>
+                <div className='wrap-style-buttons'>
+                <button className='bg-button' id='bgcolor1' onClick={() => setbgcolor('bgcolor1')}>Background Color 1</button>
+                <button className='bg-button' id='bgcolor2' onClick={() => setbgcolor('bgcolor2')}>Background Color 2</button>
+                <button className='bg-button' id='bgcolor3' onClick={() => setbgcolor('bgcolor3')}>Background Color 3</button>
+                <button className='bg-button' id='bgcolor4' onClick={() => setbgcolor('bgcolor4')}>Background Color 4</button>
+                <button className='bg-button' id='bgcolor5' onClick={() => setbgcolor('bgcolor5')}>Background Color 5</button>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <Link className='a9' to="/board">Go back to your bulletin board</Link>
             </div>
         </div>
     );
