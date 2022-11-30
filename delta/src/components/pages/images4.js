@@ -15,7 +15,6 @@ function SearchImages4() {
 
     function HandleClick() {
         const searchElement = document.getElementById('search').value;
-        console.log(searchElement);
         unsplash.search.getPhotos({
             query: searchElement,
             page: 1,

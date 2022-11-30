@@ -17,7 +17,6 @@ function WaterTrackerSearch()
         const retrievePastWaterData = async () => {
         if (author.currentUser === null)
         {
-            console.log("uid is null");
             window.location.assign("/");
         }
 
@@ -74,7 +73,6 @@ function WaterTrackerSearch()
         }
 
         setWaterEntries(tempWaterEntries);
-        console.log(tempWaterEntries);
     };
 
     retrievePastWaterData();
@@ -84,9 +82,6 @@ function WaterTrackerSearch()
     {
         let start = document.getElementById("start").value + "T00:00:00";
         let end = document.getElementById("end").value + "T00:00:00";
-
-        console.log(start);
-        console.log(end);
 
         let startDate;
         let endDate;
@@ -104,7 +99,6 @@ function WaterTrackerSearch()
         {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 window.location.assign("/");
             }
             const user = author.currentUser.uid;
@@ -139,9 +133,6 @@ function WaterTrackerSearch()
             }
         }
 
-        console.log(startDate);
-        console.log(endDate);
-
         if (startDate > endDate)
         {
             setInvalidSearch("Invalid Range");
@@ -154,7 +145,6 @@ function WaterTrackerSearch()
 
         if (author.currentUser === null)
         {
-            console.log("uid is null");
             window.location.assign("/");
         }
         const user = author.currentUser.uid;
@@ -202,7 +192,6 @@ function WaterTrackerSearch()
         }
 
         setWaterEntries(tempWaterEntries);
-        console.log(tempWaterEntries);
     }
 
     return(

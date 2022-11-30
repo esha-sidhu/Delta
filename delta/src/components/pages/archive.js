@@ -17,7 +17,6 @@ function ArchiveSearch()
         const retrievePastTodoData = async () => {
         if (author.currentUser === null)
         {
-            console.log("uid is null");
             window.location.assign("/");
         }
 
@@ -25,8 +24,6 @@ function ArchiveSearch()
         const todoQ = query(collection(database, "todoListArchive"), where("authorID", "==", user), orderBy("date"));
         const todoQRes = await getDocs(todoQ);
         const len = todoQRes.docs.length;
-        console.log("len");
-        console.log(len);
         let tempTodoEntries = [];
 
         if (len > 0)
@@ -76,9 +73,7 @@ function ArchiveSearch()
                 {dateEntry: dateStr, amountEntry: amount}
             );
         }
-
         setTodoEntries(tempTodoEntries);
-        console.log(tempTodoEntries);
     };
 
     retrievePastTodoData();
@@ -88,9 +83,6 @@ function ArchiveSearch()
     {
         let start = document.getElementById("start").value + "T00:00:00";
         let end = document.getElementById("end").value + "T00:00:00";
-
-        console.log(start);
-        console.log(end);
 
         let startDate;
         let endDate;
@@ -108,29 +100,22 @@ function ArchiveSearch()
         {
             if (author.currentUser === null)
             {
-                console.log("uid is null");
                 window.location.assign("/");
             }
             const user = author.currentUser.uid;
             const todoQ = query(collection(database, "todoListArchive"), where("authorID", "==", user), orderBy("date"));
             const todoQRes = await getDocs(todoQ);
             const len = todoQRes.docs.length;
-            console.log("archive len:");
-            console.log(len);
             if (len > 0)
             {
                 if (start === "T00:00:00")
                 {
                     startDate = todoQRes.docs[0]._document.data.value.mapValue.fields.date.timestampValue;
-                    console.log("archive startDate:");
-                    console.log(startDate);
                     startDate = new Date(startDate);
                 }
                 if (end === "T00:00:00")
                 {
                     endDate = todoQRes.docs[len-1]._document.data.value.mapValue.fields.date.timestampValue;
-                    console.log("archive endDate:");
-                    console.log(endDate);
                     endDate = new Date(endDate);
                 }
             }
@@ -158,7 +143,6 @@ function ArchiveSearch()
 
         if (author.currentUser === null)
         {
-            console.log("uid is null");
             window.location.assign("/");
         }
         const user = author.currentUser.uid;
@@ -205,7 +189,6 @@ function ArchiveSearch()
         }
 
         setTodoEntries(tempTodoEntries);
-        console.log(tempTodoEntries);
     }
 
     return(
