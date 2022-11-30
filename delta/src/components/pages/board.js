@@ -6,7 +6,8 @@ import SearchImages from './images';
 import { onAuthStateChanged } from 'firebase/auth';
 import {collection, getDocs, query, where} from 'firebase/firestore';
 import {database, author} from '../../firebase';
-import '../../styles/images.css';
+// import '../../styles/images.css';
+import '../../styles/boardstyle.css';
 
 function Board()
 {
@@ -111,59 +112,33 @@ function Board()
     return (
         <div className='bg'>
             <Navigation /> 
-            <div>
-                Welcome to your Bulletin Board!
-            </div>
-            <div>
-                <Link to="/tracker">Trackers</Link>
-            </div>
-            <div>
-                <Link to="/journal">Journal</Link>
-            </div>
-            <div>
-                <Link to="/settings">Settings</Link>
-            </div>
-            <div>
-                <Link to="/searchImages">Search Images</Link>
-            </div>
-            <div>
-                <Link to="/">Log Out</Link>
-            </div>
-            <div>
+            <Link to='/archive' className='archive'>Go to archive</Link>
+            <div className='wrapt'>
+            <div className='leftbox'>
+                <button className='plus' id='add-image1' onClick={GoToSearchImages1}>+</button><br/>
                 <div className='imageBox' id='boxed-image'><img src={imageBox1}/></div>
                 <br></br>
-                <small>Author: {authOfImage1}</small>
-                <br/>
-                <button id='add-image1' onClick={GoToSearchImages1}>+</button>
-            </div>
+                <div className='author-name'>Author: {authOfImage1}</div>
             <br/>
-            <div>
+            <br/>
+                <button className='plus' id='add-image2' onClick={GoToSearchImages2}>+</button><br/>
                 <div className='imageBox' id='boxed-image'><img src={imageBox2}/></div>
                 <br></br>
-                <small>Author: {authOfImage2}</small>
-                <br/>
-                <button id='add-image2' onClick={GoToSearchImages2}>+</button>
+                <div className='author-name'>Author: {authOfImage2}</div>
             </div>
-            <div>
-                <ToDoList/>
-            </div>
-            <div>
+            <ToDoList/>
+            <div className='rightbox'>
+                <button className='plus' id='add-image3' onClick={GoToSearchImages3}>+</button><br/>
                 <div className='imageBox' id='boxed-image'><img src={imageBox3}/></div>
                 <br></br>
-                <small>Author: {authOfImage3}</small>
-                <br/>
-                <button id='add-image3' onClick={GoToSearchImages3}>+</button>
-            </div>
+                <div className='author-name'>Author: {authOfImage3}</div>
             <br/>
-            <div>
+            <br/>
+                <button className='plus' id='add-image4' onClick={GoToSearchImages4}>+</button><br/>
                 <div className='imageBox' id='boxed-image'><img src={imageBox4}/></div>
                 <br></br>
-                <small>Author: {authOfImage4}</small>
-                <br/>
-                <button id='add-image4' onClick={GoToSearchImages4}>+</button>
+                <div className='author-name'>Author: {authOfImage4}</div>
             </div>
-            <div>
-                <Link to="/archive">Archived Tasks</Link>
             </div>
         </div>
     );
