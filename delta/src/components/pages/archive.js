@@ -128,9 +128,6 @@ function ArchiveSearch()
             }
         }
 
-        console.log(startDate);
-        console.log(endDate);
-
         if (startDate > endDate)
         {
             setInvalidSearch("Invalid Range");

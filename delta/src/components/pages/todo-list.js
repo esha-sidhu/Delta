@@ -138,7 +138,6 @@ function ToDoList()
 
         let tempChecked = [];
         const len = Checked.length;
-        console.log("length: " + len);
         for (let i = 0; i < len; i++)
         {
             tempChecked.push(document.getElementById("check" + i).checked)

@@ -104,7 +104,6 @@ function SleepTrackerSearch()
             const user = author.currentUser.uid;
             const sleepQ = query(collection(database, "sleepData"), where("authorID", "==", user), orderBy("date"));
             const sleepQRes = await getDocs(sleepQ);
-            console.log(sleepQRes);
             const len = sleepQRes.docs.length;
             if (len > 0)
             {
