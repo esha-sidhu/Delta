@@ -68,6 +68,18 @@
     color: #6b4f32;
 }
 
+.buttonArch:hover {
+    background-color: #916A53;
+    text-decoration: none;
+    color: #f5e5d5;
+}
+
+.buttonArch:active {
+    background-color: #916A53;
+    box-shadow: 0 3px #916A53;
+    transform: translateY(2px);
+}
+
 .todoWrapper {
     color: #f5e5d5;
     background-color: #774c35;
