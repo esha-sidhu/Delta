@@ -27,6 +27,33 @@
     text-decoration: underline
 }
 
+.imageLink {
+    background-color: #C89D85;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nerko One';
+    border-radius: 7px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 75%;
+    margin-right: 4%;
+    padding: 8px;
+    margin-top: 0.5%;
+}
+
+.imageLink:hover {
+    background-color: #916A53;
+    text-decoration: none;
+    color: white;
+}
+
+.imageLink:active {
+    background-color: #916A53;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
 .buttonSearch {
     background-color: #C89D85;
     font-size: 20px;
@@ -35,6 +62,18 @@
     line-height: 22px;
     border-radius: 6px;
     color: #6b4f32;
+}
+
+.buttonSearch:hover {
+    background-color: #916A53;
+    text-decoration: none;
+    color: white;
+}
+
+.buttonSearch:active {
+    background-color: #916A53;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
 }
 
 .inputText {

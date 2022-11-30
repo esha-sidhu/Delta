@@ -3,6 +3,7 @@
     height: 25vh;
     width: 20vw;
     padding: 10;
+    border: 3px solid rgb(0, 0, 0);
 }
 
 .plus {
@@ -23,7 +24,7 @@
 
 .plus:active {
     background-color: #916A53;
-    box-shadow: 0 3px #916A53;
+    box-shadow: 0 1px #916A53;
     transform: translateY(2px);
 }
 
@@ -102,4 +103,49 @@
     text-align: left;
     font-size: smaller;
     margin-left: 15%;
+}
+
+#font1{
+    font-family: 'Patrick Hand';
+    font-size: 25px;
+}
+
+#font2{
+    font-family: 'Pacifico';
+    font-size: 25px;
+}
+
+#font3{
+    font-family: 'Quicksand';
+    font-size: 25px;
+}
+
+#font4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+#font5{
+    font-family: 'Caveat Brush';
+    font-size: 25px;
+}
+
+.bgcolor1 {
+    background-color: white;
+}
+
+.bgcolor2 {
+    background-color: #Dff3fd;
+}
+
+.bgcolor3 {
+    background-color: #Fdf0c3;
+}
+
+.bgcolor4 {
+    background-color: #Fde4f2;
+}
+
+.bgcolor5 {
+    background-color: #d3c7ff;
 }

@@ -1,5 +1,6 @@
 import { createApi, search } from 'unsplash-js';
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 import {addDoc, collection, getDocs, query, where, updateDoc, getFirestore, doc} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import '../../styles/images.css';
@@ -98,7 +99,8 @@ function SearchImages() {
             type="text"
         />
         <button type="button" onClick={HandleClick} className='buttonSearch'>Search</button>
-        <br></br><br></br>
+        <br></br>
+        <Link className='imageLink' to="/board">Go back</Link>
         {image.map((val, i) => {
             return(
               <div>
@@ -107,7 +109,7 @@ function SearchImages() {
                 </button>
                 <br></br>
                 <small className='author'>Author: {val.authorName}</small>
-                <br></br><br></br>
+                <br></br>
               </div>
             );
         })}

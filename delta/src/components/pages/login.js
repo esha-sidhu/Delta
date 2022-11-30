@@ -33,6 +33,10 @@ function LogIn()
                 </div>
                 <br></br>
                 <div className='instr2'>
+                    Make that change in your life!
+                    <br></br>
+                </div>
+                <div className='instr3'>
                     Sign in with your Google account
                 </div>
                 <br></br>
