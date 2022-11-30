@@ -95,25 +95,31 @@ function SearchImages3() {
         // headers: { 'X-Custom-Header': 'foo' },
       });
 
-  return (
-    <div>
-        <input 
-            id='search'
-            type="text"
-        />
-        <button type="button" onClick={HandleClick}>Search</button>
-        {image.map((val, i) => {
-            return(
-              <div>
-                <button className='imageBox' id='boxed-image' onClick={() => BackToDashboard(i)}>
-                  <img id={"imageInsideBox" + i} src={val.image}></img>
-                </button>
-                <small>Author: {val.authorName}</small>
-              </div>
-            );
-        })}
-    </div>
-  );
+      return (
+        <div className='imageWrapper'>
+            <div className='imageTitle'>
+              &ensp;&ensp;&ensp;IMAGE SEARCH&ensp;&ensp;&ensp;
+            </div>
+            <input className='inputText'
+                id='search'
+                type="text"
+            />
+            <button type="button" onClick={HandleClick} className='buttonSearch'>Search</button>
+            <br></br><br></br>
+            {image.map((val, i) => {
+                return(
+                  <div>
+                    <button className='imageBox' id='boxed-image' onClick={() => BackToDashboard(i)}>
+                      <img id={"imageInsideBox" + i} src={val.image}></img>
+                    </button>
+                    <br></br>
+                    <small className='author'>Author: {val.authorName}</small>
+                    <br></br><br></br>
+                  </div>
+                );
+            })}
+        </div>
+      );
 }
 
 /*
