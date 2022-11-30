@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Nerko+One');
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
+.page {
+    height: 100vh;
+    background-color: white;
+}
+
+.title6 {
+    background-color: #69A790;
+    color: black;
+    font-family: 'Shadows Into Light Two';
+    font-size: 50px;
+    text-align: center;
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 3px;
+    margin-top: -0.5%;
+}
+
+.font-button {
+    background-color: #9EDEC6;
+    font-size: 36px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+    line-height: 25px;
+    margin-left: 0.2%;
+    height: 15vh;
+    width: 18vw;
+}
+
+.font-button:hover{
+    background-color: #5AC69F;
+}
+
+.font-button:active{
+    background-color: #5AC69F;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+#font1{
+    font-family: 'Patrick Hand';
+    font-size: 25px;
+}
+
+#font2{
+    font-family: 'Pacifico';
+    font-size: 25px;
+}
+
+#font3{
+    font-family: 'Quicksand';
+    font-size: 25px;
+}
+
+#font4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+#font5{
+    font-family: 'Caveat Brush';
+    font-size: 25px;
+}
+
+.bg-button {
+    background-color: #9EDEC6;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+    line-height: 25px;
+    margin-left: 1%;
+    height: 8vh;
+    width: 16vw;
+}
+
+.bg-button:hover{
+    background-color: #5AC69F;
+}
+
+.bg-button:active{
+    background-color: #5AC69F;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
+
+#bgcolor1 {
+    background-color: white;
+}
+
+#bgcolor2 {
+    background-color: #Dff3fd;
+}
+
+#bgcolor3 {
+    background-color: #Fdf0c3;
+}
+
+#bgcolor4 {
+    background-color: #Fde4f2;
+}
+
+#bgcolor5 {
+    background-color: #d3c7ff;
+}
+
+.wrap-style-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.a9 {
+    background-color: #9EDEC6;
+    font-size: 30px;
+    font-family: 'Nerko One';
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    line-height: 25px;
+    margin-left: 90%;
+    color: black;
+    padding: 4px;
+}
+
+.a9:hover {
+    background-color: #5AC69F;
+    color: black;
+    text-decoration: none;
+}
+
+.a9:active {
+    background-color: #5AC69F;
+    box-shadow: 0 3px black;
+    transform: translateY(2px);
+}
