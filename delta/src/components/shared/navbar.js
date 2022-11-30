@@ -14,7 +14,7 @@ function Navigation() {
     <nav className="navbar navbar-inverse navbar-fixed-top">
       <div className="container-fluid">
         <ul className="nav navbar-nav">
-          <li><Link to="/">Delta</Link></li>
+          <li><Link to="/">&#948;elta</Link></li>
           <li><Link to="/settings">Settings</Link></li>
           <li><Link to="/board">Board</Link></li>
           <li><Link to="/tracker">Trackers</Link></li>
@@ -27,24 +27,5 @@ function Navigation() {
     </div>
   );
 }
-
-/*
-const Navigation = () => {
-  return (
-    <Navbar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark">
-      <Container>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
-            <Nav.Link href="/settings">Settings</Nav.Link>
-            <Nav.Link href="/tracker">Trackers</Nav.Link>
-            <Nav.Link href="/journal">Journel</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-}
-*/
 
 export default Navigation;
