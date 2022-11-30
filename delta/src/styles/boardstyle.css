@@ -3,6 +3,7 @@
     height: 25vh;
     width: 20vw;
     padding: 10;
+    border: 1px solid rgb(0, 0, 0);
 }
 
 .plus {
