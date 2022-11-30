@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {author, googleProvider} from '../../firebase';
 import {signInWithPopup} from 'firebase/auth';
+import '../../styles/loginstyle.css'
 
 function LogIn()
 {
@@ -16,12 +17,28 @@ function LogIn()
     }
 
     return (
-        <div>
-            <div>
-                Sign in with your google account
-            </div>
-            <div>
-                <button onClick={googleLogIn}>Sign In</button>
+        <div className='login'>
+            <div className='padding'></div>
+            <div className='loginBlock'>
+                <div className='titleBear'>
+                    <span className='bear'>
+                        ʕ•ᴥ•ʔ
+                    </span>
+                    <span className='delta'>
+                        &ensp;&#948;elta&ensp;
+                    </span>
+                    <span className='bear'>
+                        ʕ•ᴥ•ʔ
+                    </span>
+                </div>
+                <br></br>
+                <div className='instr2'>
+                    Sign in with your Google account
+                </div>
+                <br></br>
+                <div>
+                    <button onClick={googleLogIn} className='signInButton'>Sign In</button>
+                </div>
             </div>
         </div>
     );
