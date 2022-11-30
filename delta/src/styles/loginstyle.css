@@ -68,6 +68,7 @@
     color: #000000;
     margin-left: 35%;
     padding: 20px 40px;
+    cursor: pointer;
 }
 
 .signInButton:hover {

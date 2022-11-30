@@ -267,7 +267,7 @@ class SleepTracker extends React.Component {
 
     render() {
         return (
-        <div className='page'>
+        <div className='page' style={{width: '100vw'}}>
         <Navigation/>
         <div className='wrap-top'>
         <div className='title'>Sleep Tracker</div>
