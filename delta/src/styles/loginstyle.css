@@ -51,6 +51,13 @@
     text-align: center;
 }
 
+.instr3 {
+    color: #f5e5d5;
+    font-family: 'Patrick Hand';
+    font-size: 20px;
+    text-align: center;
+}
+
 .signInButton {
     background-color: #C89D85;
     font-size: 40px;
