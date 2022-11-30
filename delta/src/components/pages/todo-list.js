@@ -13,6 +13,7 @@ function ToDoList()
     const taskMax = 10;
     const [archivedTasks, setArchivedTasks] = useState([]);
     const [temp, setTemp] = useState(false);
+    const [font, setFont] = useState("font1");
 
     let date = new Date();
     date.setHours(0, 0, 0, 0);
@@ -36,6 +37,21 @@ function ToDoList()
     }
 
     useEffect(() => {
+        const retrivePastSettingData = async () => {
+            if (author.currentUser === null)
+            {
+                console.log("uid is null");
+                return;
+            }
+            const user = author.currentUser.uid;
+            const settingsQ = query(collection(database, "settingsData"), where("authorID", "==", user));
+            const settingsQRes = await getDocs(settingsQ);
+            if (settingsQRes.docs.length !== 0)
+            {
+                const font_temp = settingsQRes.docs[0]._document.data.value.mapValue.fields.fontSet.stringValue;
+                setFont(font_temp)
+            }
+        }
         const retrievePastTaskData = async () => {
             if (author.currentUser === null)
             {
@@ -78,6 +94,7 @@ function ToDoList()
         };
         
         retrievePastTaskData();
+        retrivePastSettingData();
     }, [temp]);
 
     async function saveTaskData(c, checkedItems)
