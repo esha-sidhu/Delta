@@ -19,8 +19,8 @@ function Board()
     const [imageBox4, setImageBox4] = useState("");
     const [authOfImage4, setAuthOfImage4] = useState("");
     const [temp, setTemp] = useState(false);
-    const [font, setFont] = useState("");
-    const [color, setBgColor] = useState("");
+    const [font, setFont] = useState("font1");
+    const [color, setBgColor] = useState("bgcolor1");
 
     if (performance.getEntriesByType("navigation")[0].type === "reload")
     {
