@@ -6,10 +6,10 @@ Delta is an application that helps the user organize their life in a friendly, c
 ## Technologies used:
 
 The frameworks we used include React.
-The runtime environment we used include node.js
+The runtime environment we used include node.js.
 The languages we used include JavaScript and HTML/CSS.
 The packages we used include react-router-dom, firebase, and unsplash-js.
-We used the firestore database on Google firebase to store user data.
+We used the Firestore Database on Google Firebase to store user data.
 We also used the Google Fonts Database to select our fonts.
 
 ## Setup:
