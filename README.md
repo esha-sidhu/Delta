@@ -3,6 +3,8 @@
 Repository for Delta, a webpage designed for our CS 35L class during Fall 2022 at UCLA.
 Delta is an application that helps the user organize their life in a friendly, customizable, and digital way–similar to a physical bullet journal, to help students stay organized, and manage their stress.
 
+[PRESENTATION SLIDES](https://docs.google.com/presentation/d/1iVz3QdJEEpzIZq2GVA9c-2VIF_Zo28YaLXgmWkcs0II/edit#slide=id.p)
+
 ## Technologies used:
 
 The frameworks we used include React.
