@@ -169,7 +169,7 @@ function ArchiveSearch()
                 }
                 else
                 {
-                    const amount = [];
+                    const amount = [{stringValue: "No tasks have been completed today!"}];
                     tempTodoEntries.push(
                         {dateEntry: date, amountEntry: amount}
                     );
@@ -178,11 +178,14 @@ function ArchiveSearch()
         }
         else
         {
-            const amount = [{stringValue: "No tasks have been completed today!"}];
-            const date = convertDateObjectToStr(endDate);
-            tempTodoEntries.push(
-                {dateEntry: date, amountEntry: amount}
-            );
+            for (let i = endDate; i >= startDate; i.setDate(i.getDate() - 1))
+            {
+                const date = convertDateObjectToStr(i);
+                const amount = [{stringValue: "No tasks have been completed today!"}];
+                tempTodoEntries.push(
+                    {dateEntry: date, amountEntry: amount}
+                );
+            }
         }
 
         setTodoEntries(tempTodoEntries);
