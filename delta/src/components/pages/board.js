@@ -8,7 +8,14 @@ import {collection, getDocs, query, where} from 'firebase/firestore';
 import {database, author} from '../../firebase';
 import '../../styles/boardstyle.css';
 
-const quotes = {0: 'Never regret anything that made you smile.', 1: 'If you want to love others, you should love yourself first.', 2: 'A beautiful day begins with a beautiful mindset.', 3: 'What makes you happy doesn\'t need to make sense to others.', 4: 'Choose happy!', 5: 'Don\'t forget to smile today :)', 6: 'Do more of what makes you happy.'}
+const quotes = {0: 'Never regret anything that made you smile.',
+ 1: 'If you want to love others, you should love yourself first.',
+ 2: 'A beautiful day begins with a beautiful mindset.',
+ 3: 'What makes you happy doesn\'t need to make sense to others.',
+ 4: 'Choose happy!',
+ 5: 'Don\'t forget to smile today :)',
+ 6: 'Do more of what makes you happy.'}
+ 
 const d = new Date();
 let day = d.getDay();
 
@@ -113,7 +120,7 @@ function Board()
         <div className={color} style={{height:'130vh'}}>
             <Navigation /> 
             <Link to='/archive' className='archive'>Go to archive</Link>
-            <div style={{textAlign:'center', fontSize:'28px', fontFamily:'Times New Roman', fontWeight:'bold'}}>"{quotes[day]}"</div>
+            <div style={{textAlign:'center', fontSize:'28px', fontWeight:'bold', lineHeight:'50px'}} id={font}>"{quotes[day]}"</div>
             <div className='wrapt'>
             <div className='leftbox'>
                 <button className='plus' id='add-image1' onClick={GoToSearchImages1}>+</button><br/>
