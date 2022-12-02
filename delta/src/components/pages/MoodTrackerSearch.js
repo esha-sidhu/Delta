@@ -33,8 +33,8 @@ function MoodTrackerSearch()
             let lastDate = moodQRes.docs[len-1]._document.data.value.mapValue.fields.date.timestampValue;
             lastDate = new Date(lastDate);
 
-            setMinDate(`${firstDate.getFullYear()}-${firstDate.getMonth() + 1}-${firstDate.getDate()}`);
-            setMaxDate(`${lastDate.getFullYear()}-${lastDate.getMonth() + 1}-${lastDate.getDate()}`);
+            setMinDate(`${firstDate.getFullYear()}-${String(firstDate.getMonth() + 1).padStart(2, '0')}-${String(firstDate.getDate()).padStart(2, '0')}`);
+            setMaxDate(`${lastDate.getFullYear()}-${String(lastDate.getMonth() + 1).padStart(2, '0')}-${String(lastDate.getDate()).padStart(2, '0')}`);
 
             let j = len - 1;
             for (let i = lastDate; i >= firstDate; i.setDate(i.getDate() - 1))
@@ -62,8 +62,8 @@ function MoodTrackerSearch()
             const date = new Date();
             date.setHours(0, 0, 0, 0);
 
-            setMinDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
-            setMaxDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+            setMinDate(`${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`);
+            setMaxDate(`${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`);
 
             const dateStr = convertDateObjectToStr(date);
 
